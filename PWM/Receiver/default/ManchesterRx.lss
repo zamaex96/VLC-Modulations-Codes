@@ -1,0 +1,1432 @@
+
+ManchesterRx.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000006c4  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000004  00800100  00800100  00000738  2**0
+                  ALLOC
+  2 .debug_aranges 00000020  00000000  00000000  00000738  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 000000ab  00000000  00000000  00000758  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   0000055c  00000000  00000000  00000803  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 00000203  00000000  00000000  00000d5f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   00000648  00000000  00000000  00000f62  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  000000b0  00000000  00000000  000015ac  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    00000187  00000000  00000000  0000165c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    000002ae  00000000  00000000  000017e3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000030  00000000  00000000  00001a91  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 93 00 	jmp	0x126	; 0x126 <__vector_14>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e4 ec       	ldi	r30, 0xC4	; 196
+  a0:	f6 e0       	ldi	r31, 0x06	; 6
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 30       	cpi	r26, 0x00	; 0
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a0 e0       	ldi	r26, 0x00	; 0
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a4 30       	cpi	r26, 0x04	; 4
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 0f 03 	call	0x61e	; 0x61e <main>
+  c6:	0c 94 60 03 	jmp	0x6c0	; 0x6c0 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <serial_init>:
+//-----------------------------------serial----------------------------------------
+void serial_init(void) 
+{
+  unsigned int baudrate[15] ={416,207,103,68,51,34,25,16,12,8,3,3,1,0}; 
+
+  UBRR1L = baudrate[9];
+  ce:	88 e0       	ldi	r24, 0x08	; 8
+  d0:	80 93 99 00 	sts	0x0099, r24
+  UBRR1H = baudrate[9]>>8;      
+  d4:	10 92 98 00 	sts	0x0098, r1
+  
+  UBRR0L = baudrate[9];
+  d8:	89 b9       	out	0x09, r24	; 9
+  UBRR0H = baudrate[9]>>8;         
+  da:	10 92 90 00 	sts	0x0090, r1
+   
+  UCSR1C = (1 << UCSZ1) | (1 << UCSZ0);  // no parity ,  stop bit 1 , data 8
+  de:	96 e0       	ldi	r25, 0x06	; 6
+  e0:	90 93 9d 00 	sts	0x009D, r25
+  UCSR1B = (1 << TXEN) | (1 << RXEN);
+  e4:	88 e1       	ldi	r24, 0x18	; 24
+  e6:	80 93 9a 00 	sts	0x009A, r24
+  //double baudrate 
+  UCSR0C = (1 << UCSZ1) | (1 << UCSZ0);  //serial 8-bit format. no parity, stop bit 1, data 8
+  ea:	90 93 95 00 	sts	0x0095, r25
+  UCSR0B = (1 << TXEN) | (1 << RXEN);    //enable tx rx located in control reg UCSR1B
+  ee:	8a b9       	out	0x0a, r24	; 10
+                                         //When set, these two bits turn on the serial buffers to allow for serial communications
+}
+  f0:	08 95       	ret
+
+000000f2 <transmit>:
+
+void transmit(unsigned char data)
+{
+  f2:	98 2f       	mov	r25, r24
+while(!(UCSR1A & (1<<UDRE1)));
+  f4:	80 91 9b 00 	lds	r24, 0x009B
+  f8:	85 ff       	sbrs	r24, 5
+  fa:	fc cf       	rjmp	.-8      	; 0xf4 <transmit+0x2>
+UDR1=data;
+  fc:	90 93 9c 00 	sts	0x009C, r25
+
+}
+ 100:	08 95       	ret
+
+00000102 <Timer1_init>:
+{
+
+	//unsigned int cycles;
+	unsigned long cycles;
+  	// Initializing Timer
+	TCCR1A = 0;                 // clear control register A 
+ 102:	1f bc       	out	0x2f, r1	; 47
+	TCCR1B |= (1 << WGM13); // set mode 8: phase and frequency correct pwm, stop the timer
+ 104:	8e b5       	in	r24, 0x2e	; 46
+ 106:	80 61       	ori	r24, 0x10	; 16
+ 108:	8e bd       	out	0x2e, r24	; 46
+ 	
+	unsigned char oldSREG = SREG;
+ 10a:	2f b7       	in	r18, 0x3f	; 63
+	cli();
+ 10c:	f8 94       	cli
+
+	//cycles = 20; // 2/(16000000/8)*10 = 10us, *20 = 20us (50KHz)
+	cycles = 50;	// 2/(16000000/64)*125 = 1ms , *25 = 0.2ms
+	ICR1 = cycles;
+ 10e:	82 e3       	ldi	r24, 0x32	; 50
+ 110:	90 e0       	ldi	r25, 0x00	; 0
+ 112:	97 bd       	out	0x27, r25	; 39
+ 114:	86 bd       	out	0x26, r24	; 38
+	//sei();
+	SREG = oldSREG;
+ 116:	2f bf       	out	0x3f, r18	; 63
+
+	
+	TCCR1B &= ~((1 << CS10) | (1 << CS11) | (1 << CS12));
+ 118:	8e b5       	in	r24, 0x2e	; 46
+ 11a:	88 7f       	andi	r24, 0xF8	; 248
+ 11c:	8e bd       	out	0x2e, r24	; 46
+	TCCR1B |= (1 << CS11);	// prescale: clk / 8
+ 11e:	8e b5       	in	r24, 0x2e	; 46
+ 120:	82 60       	ori	r24, 0x02	; 2
+ 122:	8e bd       	out	0x2e, r24	; 46
+	//TCCR1B |= (1 << CS11) | (1 << CS10);	// prescale: clk / 64
+	//TCCR1B |= (1 << CS11) | (1 << CS10);	// prescale: clk / 64
+
+	
+
+}
+ 124:	08 95       	ret
+
+00000126 <__vector_14>:
+
+ISR(TIMER1_OVF_vect)
+{
+ 126:	1f 92       	push	r1
+ 128:	0f 92       	push	r0
+ 12a:	0f b6       	in	r0, 0x3f	; 63
+ 12c:	0f 92       	push	r0
+ 12e:	11 24       	eor	r1, r1
+ 130:	8f 93       	push	r24
+ 132:	9f 93       	push	r25
+ 134:	af 93       	push	r26
+ 136:	bf 93       	push	r27
+	cnt++;
+ 138:	80 91 00 01 	lds	r24, 0x0100
+ 13c:	90 91 01 01 	lds	r25, 0x0101
+ 140:	a0 91 02 01 	lds	r26, 0x0102
+ 144:	b0 91 03 01 	lds	r27, 0x0103
+ 148:	01 96       	adiw	r24, 0x01	; 1
+ 14a:	a1 1d       	adc	r26, r1
+ 14c:	b1 1d       	adc	r27, r1
+ 14e:	80 93 00 01 	sts	0x0100, r24
+ 152:	90 93 01 01 	sts	0x0101, r25
+ 156:	a0 93 02 01 	sts	0x0102, r26
+ 15a:	b0 93 03 01 	sts	0x0103, r27
+}
+ 15e:	bf 91       	pop	r27
+ 160:	af 91       	pop	r26
+ 162:	9f 91       	pop	r25
+ 164:	8f 91       	pop	r24
+ 166:	0f 90       	pop	r0
+ 168:	0f be       	out	0x3f, r0	; 63
+ 16a:	0f 90       	pop	r0
+ 16c:	1f 90       	pop	r1
+ 16e:	18 95       	reti
+
+00000170 <pwm_sync>:
+	bit_to_check 		= 0x01;
+	byte_placeholder	= 0x00;
+	byte_placeholder1	= 0xFF80;
+	predata				= 0x00;
+	temp = PINA;
+	while(!(CHECKBIT(temp, bit_to_check))){temp = PINA; }//transmit(0x88);}
+ 170:	89 b3       	in	r24, 0x19	; 25
+ 172:	80 ff       	sbrs	r24, 0
+ 174:	fd cf       	rjmp	.-6      	; 0x170 <pwm_sync>
+ 176:	20 e0       	ldi	r18, 0x00	; 0
+ 178:	30 e0       	ldi	r19, 0x00	; 0
+ 17a:	c9 01       	movw	r24, r18
+ 17c:	88 0f       	add	r24, r24
+ 17e:	99 1f       	adc	r25, r25
+
+	while(1)
+	{
+		temp = PINA;	
+		if(CHECKBIT(temp, bit_to_check)){
+ 180:	c8 9b       	sbis	0x19, 0	; 25
+ 182:	03 c0       	rjmp	.+6      	; 0x18a <pwm_sync+0x1a>
+			
+				bit_to_shift = 0x01;				
+				byte_placeholder = byte_placeholder<<1;
+				byte_placeholder = byte_placeholder|bit_to_shift;			
+ 184:	9c 01       	movw	r18, r24
+ 186:	21 60       	ori	r18, 0x01	; 1
+ 188:	01 c0       	rjmp	.+2      	; 0x18c <pwm_sync+0x1c>
+			}	
+		else
+			{
+				bit_to_shift = 0x00;				
+				byte_placeholder = byte_placeholder<<1;
+ 18a:	9c 01       	movw	r18, r24
+				byte_placeholder = byte_placeholder|bit_to_shift;	
+			}
+		if(byte_placeholder == 0x8CEF)
+ 18c:	8c e8       	ldi	r24, 0x8C	; 140
+ 18e:	2f 3e       	cpi	r18, 0xEF	; 239
+ 190:	38 07       	cpc	r19, r24
+ 192:	99 f0       	breq	.+38     	; 0x1ba <pwm_sync+0x4a>
+		break;
+		cnt1 = 0, cnt=0;
+ 194:	10 92 00 01 	sts	0x0100, r1
+ 198:	10 92 01 01 	sts	0x0101, r1
+ 19c:	10 92 02 01 	sts	0x0102, r1
+ 1a0:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 1a4:	80 91 00 01 	lds	r24, 0x0100
+ 1a8:	90 91 01 01 	lds	r25, 0x0101
+ 1ac:	a0 91 02 01 	lds	r26, 0x0102
+ 1b0:	b0 91 03 01 	lds	r27, 0x0103
+				byte_placeholder = byte_placeholder|bit_to_shift;	
+			}
+		if(byte_placeholder == 0x8CEF)
+		break;
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 1b4:	89 2b       	or	r24, r25
+ 1b6:	09 f7       	brne	.-62     	; 0x17a <pwm_sync+0xa>
+ 1b8:	f5 cf       	rjmp	.-22     	; 0x1a4 <pwm_sync+0x34>
+		{
+			cnt1 = cnt;
+		}
+		//transmit(byte_placeholder);
+	}
+}
+ 1ba:	08 95       	ret
+
+000001bc <pwm_sync_B>:
+	int flag 			= 0;
+	bit_to_check 		= 0x01;
+	byte_placeholder	= 0x00;
+	byte_placeholder1	= 0xFF80;
+	predata				= 0x00;
+	temp = PINB;
+ 1bc:	86 b3       	in	r24, 0x16	; 22
+ 1be:	01 c0       	rjmp	.+2      	; 0x1c2 <pwm_sync_B+0x6>
+	while(!(CHECKBIT(temp, bit_to_check))){temp = PINA; }//transmit(0x88);}
+ 1c0:	89 b3       	in	r24, 0x19	; 25
+ 1c2:	80 ff       	sbrs	r24, 0
+ 1c4:	fd cf       	rjmp	.-6      	; 0x1c0 <pwm_sync_B+0x4>
+ 1c6:	20 e0       	ldi	r18, 0x00	; 0
+ 1c8:	30 e0       	ldi	r19, 0x00	; 0
+ 1ca:	c9 01       	movw	r24, r18
+ 1cc:	88 0f       	add	r24, r24
+ 1ce:	99 1f       	adc	r25, r25
+
+	while(1)
+	{
+		temp = PINB;	
+		if(CHECKBIT(temp, bit_to_check)){
+ 1d0:	b0 9b       	sbis	0x16, 0	; 22
+ 1d2:	03 c0       	rjmp	.+6      	; 0x1da <pwm_sync_B+0x1e>
+			
+				bit_to_shift = 0x01;				
+				byte_placeholder = byte_placeholder<<1;
+				byte_placeholder = byte_placeholder|bit_to_shift;			
+ 1d4:	9c 01       	movw	r18, r24
+ 1d6:	21 60       	ori	r18, 0x01	; 1
+ 1d8:	01 c0       	rjmp	.+2      	; 0x1dc <pwm_sync_B+0x20>
+			}	
+		else
+			{
+				bit_to_shift = 0x00;				
+				byte_placeholder = byte_placeholder<<1;
+ 1da:	9c 01       	movw	r18, r24
+				byte_placeholder = byte_placeholder|bit_to_shift;	
+			}
+		if(byte_placeholder == 0x8CEF)
+ 1dc:	8c e8       	ldi	r24, 0x8C	; 140
+ 1de:	2f 3e       	cpi	r18, 0xEF	; 239
+ 1e0:	38 07       	cpc	r19, r24
+ 1e2:	99 f0       	breq	.+38     	; 0x20a <pwm_sync_B+0x4e>
+		break;
+		cnt1 = 0, cnt=0;
+ 1e4:	10 92 00 01 	sts	0x0100, r1
+ 1e8:	10 92 01 01 	sts	0x0101, r1
+ 1ec:	10 92 02 01 	sts	0x0102, r1
+ 1f0:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 1f4:	80 91 00 01 	lds	r24, 0x0100
+ 1f8:	90 91 01 01 	lds	r25, 0x0101
+ 1fc:	a0 91 02 01 	lds	r26, 0x0102
+ 200:	b0 91 03 01 	lds	r27, 0x0103
+				byte_placeholder = byte_placeholder|bit_to_shift;	
+			}
+		if(byte_placeholder == 0x8CEF)
+		break;
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 204:	89 2b       	or	r24, r25
+ 206:	09 f7       	brne	.-62     	; 0x1ca <pwm_sync_B+0xe>
+ 208:	f5 cf       	rjmp	.-22     	; 0x1f4 <pwm_sync_B+0x38>
+		{
+			cnt1 = cnt;
+		}
+		//transmit(byte_placeholder);
+	}
+}
+ 20a:	08 95       	ret
+
+0000020c <get_position>:
+
+// --------------------------- Data Detection ----------------------------------
+
+unsigned int get_position(int i,int j, int k,int m)
+{
+	if(i==1 && j==0 && k==0 && m==0)
+ 20c:	01 97       	sbiw	r24, 0x01	; 1
+ 20e:	11 f5       	brne	.+68     	; 0x254 <get_position+0x48>
+ 210:	61 15       	cp	r22, r1
+ 212:	71 05       	cpc	r23, r1
+ 214:	29 f4       	brne	.+10     	; 0x220 <get_position+0x14>
+ 216:	45 2b       	or	r20, r21
+ 218:	e9 f4       	brne	.+58     	; 0x254 <get_position+0x48>
+ 21a:	23 2b       	or	r18, r19
+ 21c:	d9 f4       	brne	.+54     	; 0x254 <get_position+0x48>
+ 21e:	1b c0       	rjmp	.+54     	; 0x256 <get_position+0x4a>
+	{
+		return 0;
+	}
+	else if(i==1 && j==1 && k==0 && m==0)
+ 220:	61 30       	cpi	r22, 0x01	; 1
+ 222:	71 05       	cpc	r23, r1
+ 224:	b9 f4       	brne	.+46     	; 0x254 <get_position+0x48>
+ 226:	41 15       	cp	r20, r1
+ 228:	51 05       	cpc	r21, r1
+ 22a:	29 f4       	brne	.+10     	; 0x236 <get_position+0x2a>
+ 22c:	23 2b       	or	r18, r19
+ 22e:	91 f4       	brne	.+36     	; 0x254 <get_position+0x48>
+ 230:	21 e0       	ldi	r18, 0x01	; 1
+ 232:	30 e0       	ldi	r19, 0x00	; 0
+ 234:	12 c0       	rjmp	.+36     	; 0x25a <get_position+0x4e>
+	{
+		return 1;
+	}
+	else if(i==1 && j==1 && k==1 && m==0)
+ 236:	41 30       	cpi	r20, 0x01	; 1
+ 238:	51 05       	cpc	r21, r1
+ 23a:	61 f4       	brne	.+24     	; 0x254 <get_position+0x48>
+ 23c:	21 15       	cp	r18, r1
+ 23e:	31 05       	cpc	r19, r1
+ 240:	19 f4       	brne	.+6      	; 0x248 <get_position+0x3c>
+ 242:	22 e0       	ldi	r18, 0x02	; 2
+ 244:	30 e0       	ldi	r19, 0x00	; 0
+ 246:	09 c0       	rjmp	.+18     	; 0x25a <get_position+0x4e>
+	{
+		return 2;
+	}
+	else if(i==1 && j==1 && k==1 && m==1)
+ 248:	21 30       	cpi	r18, 0x01	; 1
+ 24a:	31 05       	cpc	r19, r1
+ 24c:	19 f4       	brne	.+6      	; 0x254 <get_position+0x48>
+ 24e:	23 e0       	ldi	r18, 0x03	; 3
+ 250:	30 e0       	ldi	r19, 0x00	; 0
+ 252:	03 c0       	rjmp	.+6      	; 0x25a <get_position+0x4e>
+ 254:	08 95       	ret
+	{
+		return 3;
+	}
+}
+ 256:	20 e0       	ldi	r18, 0x00	; 0
+ 258:	30 e0       	ldi	r19, 0x00	; 0
+ 25a:	c9 01       	movw	r24, r18
+ 25c:	08 95       	ret
+
+0000025e <pwm_data_3>:
+
+
+unsigned int pwm_data_3()
+{
+ 25e:	cf 92       	push	r12
+ 260:	df 92       	push	r13
+ 262:	ef 92       	push	r14
+ 264:	ff 92       	push	r15
+ 266:	0f 93       	push	r16
+ 268:	1f 93       	push	r17
+ 26a:	df 93       	push	r29
+ 26c:	cf 93       	push	r28
+ 26e:	cd b7       	in	r28, 0x3d	; 61
+ 270:	de b7       	in	r29, 0x3e	; 62
+ 272:	a8 97       	sbiw	r28, 0x28	; 40
+ 274:	0f b6       	in	r0, 0x3f	; 63
+ 276:	f8 94       	cli
+ 278:	de bf       	out	0x3e, r29	; 62
+ 27a:	0f be       	out	0x3f, r0	; 63
+ 27c:	cd bf       	out	0x3d, r28	; 61
+ 27e:	fe 01       	movw	r30, r28
+ 280:	31 96       	adiw	r30, 0x01	; 1
+		{
+			cnt1 = cnt;
+		}
+		temp = PINA;
+		if(CHECKBIT(temp, bit_to_check)){
+			data[i] = 1;			
+ 282:	41 e0       	ldi	r20, 0x01	; 1
+ 284:	50 e0       	ldi	r21, 0x00	; 0
+	bit_to_check 		= 0x01;
+	byte_placeholder	= 0x00;
+	byte_placeholder1	= 0xFF80;
+	predata				= 0x00;
+
+	for(i=0;i<16;i++)
+ 286:	9e 01       	movw	r18, r28
+ 288:	2f 5d       	subi	r18, 0xDF	; 223
+ 28a:	3f 4f       	sbci	r19, 0xFF	; 255
+	{
+		cnt1 = 0, cnt=0;
+ 28c:	10 92 00 01 	sts	0x0100, r1
+ 290:	10 92 01 01 	sts	0x0101, r1
+ 294:	10 92 02 01 	sts	0x0102, r1
+ 298:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 29c:	80 91 00 01 	lds	r24, 0x0100
+ 2a0:	90 91 01 01 	lds	r25, 0x0101
+ 2a4:	a0 91 02 01 	lds	r26, 0x0102
+ 2a8:	b0 91 03 01 	lds	r27, 0x0103
+	predata				= 0x00;
+
+	for(i=0;i<16;i++)
+	{
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 2ac:	89 2b       	or	r24, r25
+ 2ae:	b1 f3       	breq	.-20     	; 0x29c <pwm_data_3+0x3e>
+		{
+			cnt1 = cnt;
+		}
+		temp = PINA;
+		if(CHECKBIT(temp, bit_to_check)){
+ 2b0:	c8 9b       	sbis	0x19, 0	; 25
+ 2b2:	03 c0       	rjmp	.+6      	; 0x2ba <pwm_data_3+0x5c>
+			data[i] = 1;			
+ 2b4:	51 83       	std	Z+1, r21	; 0x01
+ 2b6:	40 83       	st	Z, r20
+ 2b8:	02 c0       	rjmp	.+4      	; 0x2be <pwm_data_3+0x60>
+			}	
+		else
+			{
+				data[i] =0;	
+ 2ba:	11 82       	std	Z+1, r1	; 0x01
+ 2bc:	10 82       	st	Z, r1
+ 2be:	32 96       	adiw	r30, 0x02	; 2
+	bit_to_check 		= 0x01;
+	byte_placeholder	= 0x00;
+	byte_placeholder1	= 0xFF80;
+	predata				= 0x00;
+
+	for(i=0;i<16;i++)
+ 2c0:	e2 17       	cp	r30, r18
+ 2c2:	f3 07       	cpc	r31, r19
+ 2c4:	19 f7       	brne	.-58     	; 0x28c <pwm_data_3+0x2e>
+			}
+		
+		//flag++;
+	}
+
+	p1 = get_position(data[0],data[1],data[2],data[3]);
+ 2c6:	6b 81       	ldd	r22, Y+3	; 0x03
+ 2c8:	7c 81       	ldd	r23, Y+4	; 0x04
+ 2ca:	4d 81       	ldd	r20, Y+5	; 0x05
+ 2cc:	5e 81       	ldd	r21, Y+6	; 0x06
+ 2ce:	2f 81       	ldd	r18, Y+7	; 0x07
+ 2d0:	38 85       	ldd	r19, Y+8	; 0x08
+ 2d2:	89 81       	ldd	r24, Y+1	; 0x01
+ 2d4:	9a 81       	ldd	r25, Y+2	; 0x02
+ 2d6:	0e 94 06 01 	call	0x20c	; 0x20c <get_position>
+ 2da:	8c 01       	movw	r16, r24
+	p2 = get_position(data[4],data[5],data[6],data[7]);
+ 2dc:	6b 85       	ldd	r22, Y+11	; 0x0b
+ 2de:	7c 85       	ldd	r23, Y+12	; 0x0c
+ 2e0:	4d 85       	ldd	r20, Y+13	; 0x0d
+ 2e2:	5e 85       	ldd	r21, Y+14	; 0x0e
+ 2e4:	2f 85       	ldd	r18, Y+15	; 0x0f
+ 2e6:	38 89       	ldd	r19, Y+16	; 0x10
+ 2e8:	89 85       	ldd	r24, Y+9	; 0x09
+ 2ea:	9a 85       	ldd	r25, Y+10	; 0x0a
+ 2ec:	0e 94 06 01 	call	0x20c	; 0x20c <get_position>
+ 2f0:	7c 01       	movw	r14, r24
+	p3 = get_position(data[8],data[9],data[10],data[11]);
+ 2f2:	6b 89       	ldd	r22, Y+19	; 0x13
+ 2f4:	7c 89       	ldd	r23, Y+20	; 0x14
+ 2f6:	4d 89       	ldd	r20, Y+21	; 0x15
+ 2f8:	5e 89       	ldd	r21, Y+22	; 0x16
+ 2fa:	2f 89       	ldd	r18, Y+23	; 0x17
+ 2fc:	38 8d       	ldd	r19, Y+24	; 0x18
+ 2fe:	89 89       	ldd	r24, Y+17	; 0x11
+ 300:	9a 89       	ldd	r25, Y+18	; 0x12
+ 302:	0e 94 06 01 	call	0x20c	; 0x20c <get_position>
+ 306:	6c 01       	movw	r12, r24
+	p4 = get_position(data[12],data[13],data[14],data[15]);
+ 308:	6b 8d       	ldd	r22, Y+27	; 0x1b
+ 30a:	7c 8d       	ldd	r23, Y+28	; 0x1c
+ 30c:	4d 8d       	ldd	r20, Y+29	; 0x1d
+ 30e:	5e 8d       	ldd	r21, Y+30	; 0x1e
+ 310:	2f 8d       	ldd	r18, Y+31	; 0x1f
+ 312:	38 a1       	ldd	r19, Y+32	; 0x20
+ 314:	89 8d       	ldd	r24, Y+25	; 0x19
+ 316:	9a 8d       	ldd	r25, Y+26	; 0x1a
+ 318:	0e 94 06 01 	call	0x20c	; 0x20c <get_position>
+	
+	if(p1 == 0)
+ 31c:	01 15       	cp	r16, r1
+ 31e:	11 05       	cpc	r17, r1
+ 320:	91 f0       	breq	.+36     	; 0x346 <pwm_data_3+0xe8>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if (p1 == 1)
+ 322:	01 30       	cpi	r16, 0x01	; 1
+ 324:	11 05       	cpc	r17, r1
+ 326:	19 f4       	brne	.+6      	; 0x32e <pwm_data_3+0xd0>
+ 328:	21 e0       	ldi	r18, 0x01	; 1
+ 32a:	30 e0       	ldi	r19, 0x00	; 0
+ 32c:	0e c0       	rjmp	.+28     	; 0x34a <pwm_data_3+0xec>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if(p1 == 2)
+ 32e:	02 30       	cpi	r16, 0x02	; 2
+ 330:	11 05       	cpc	r17, r1
+ 332:	19 f4       	brne	.+6      	; 0x33a <pwm_data_3+0xdc>
+ 334:	22 e0       	ldi	r18, 0x02	; 2
+ 336:	30 e0       	ldi	r19, 0x00	; 0
+ 338:	08 c0       	rjmp	.+16     	; 0x34a <pwm_data_3+0xec>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if(p1 ==3)
+ 33a:	03 30       	cpi	r16, 0x03	; 3
+ 33c:	11 05       	cpc	r17, r1
+ 33e:	19 f4       	brne	.+6      	; 0x346 <pwm_data_3+0xe8>
+ 340:	23 e0       	ldi	r18, 0x03	; 3
+ 342:	30 e0       	ldi	r19, 0x00	; 0
+ 344:	02 c0       	rjmp	.+4      	; 0x34a <pwm_data_3+0xec>
+ 346:	20 e0       	ldi	r18, 0x00	; 0
+ 348:	30 e0       	ldi	r19, 0x00	; 0
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	if(p2 == 0)
+ 34a:	e1 14       	cp	r14, r1
+ 34c:	f1 04       	cpc	r15, r1
+ 34e:	29 f4       	brne	.+10     	; 0x35a <pwm_data_3+0xfc>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 350:	22 0f       	add	r18, r18
+ 352:	33 1f       	adc	r19, r19
+ 354:	22 0f       	add	r18, r18
+ 356:	33 1f       	adc	r19, r19
+ 358:	1d c0       	rjmp	.+58     	; 0x394 <pwm_data_3+0x136>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if (p2 == 1)
+ 35a:	41 e0       	ldi	r20, 0x01	; 1
+ 35c:	e4 16       	cp	r14, r20
+ 35e:	f1 04       	cpc	r15, r1
+ 360:	31 f4       	brne	.+12     	; 0x36e <pwm_data_3+0x110>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+ 362:	22 0f       	add	r18, r18
+ 364:	33 1f       	adc	r19, r19
+ 366:	22 0f       	add	r18, r18
+ 368:	33 1f       	adc	r19, r19
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 36a:	21 60       	ori	r18, 0x01	; 1
+ 36c:	13 c0       	rjmp	.+38     	; 0x394 <pwm_data_3+0x136>
+	}
+	else if(p2 == 2)
+ 36e:	42 e0       	ldi	r20, 0x02	; 2
+ 370:	e4 16       	cp	r14, r20
+ 372:	f1 04       	cpc	r15, r1
+ 374:	31 f4       	brne	.+12     	; 0x382 <pwm_data_3+0x124>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 376:	22 0f       	add	r18, r18
+ 378:	33 1f       	adc	r19, r19
+ 37a:	22 0f       	add	r18, r18
+ 37c:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 37e:	22 60       	ori	r18, 0x02	; 2
+ 380:	09 c0       	rjmp	.+18     	; 0x394 <pwm_data_3+0x136>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if(p2==3)
+ 382:	43 e0       	ldi	r20, 0x03	; 3
+ 384:	e4 16       	cp	r14, r20
+ 386:	f1 04       	cpc	r15, r1
+ 388:	29 f4       	brne	.+10     	; 0x394 <pwm_data_3+0x136>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 38a:	22 0f       	add	r18, r18
+ 38c:	33 1f       	adc	r19, r19
+ 38e:	22 0f       	add	r18, r18
+ 390:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 392:	23 60       	ori	r18, 0x03	; 3
+	}
+	if(p3 == 0)
+ 394:	c1 14       	cp	r12, r1
+ 396:	d1 04       	cpc	r13, r1
+ 398:	29 f4       	brne	.+10     	; 0x3a4 <pwm_data_3+0x146>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 39a:	22 0f       	add	r18, r18
+ 39c:	33 1f       	adc	r19, r19
+ 39e:	22 0f       	add	r18, r18
+ 3a0:	33 1f       	adc	r19, r19
+ 3a2:	1d c0       	rjmp	.+58     	; 0x3de <pwm_data_3+0x180>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if (p3 == 1)
+ 3a4:	41 e0       	ldi	r20, 0x01	; 1
+ 3a6:	c4 16       	cp	r12, r20
+ 3a8:	d1 04       	cpc	r13, r1
+ 3aa:	31 f4       	brne	.+12     	; 0x3b8 <pwm_data_3+0x15a>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+ 3ac:	22 0f       	add	r18, r18
+ 3ae:	33 1f       	adc	r19, r19
+ 3b0:	22 0f       	add	r18, r18
+ 3b2:	33 1f       	adc	r19, r19
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 3b4:	21 60       	ori	r18, 0x01	; 1
+ 3b6:	13 c0       	rjmp	.+38     	; 0x3de <pwm_data_3+0x180>
+	}
+	else if(p3 == 2)
+ 3b8:	42 e0       	ldi	r20, 0x02	; 2
+ 3ba:	c4 16       	cp	r12, r20
+ 3bc:	d1 04       	cpc	r13, r1
+ 3be:	31 f4       	brne	.+12     	; 0x3cc <pwm_data_3+0x16e>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 3c0:	22 0f       	add	r18, r18
+ 3c2:	33 1f       	adc	r19, r19
+ 3c4:	22 0f       	add	r18, r18
+ 3c6:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 3c8:	22 60       	ori	r18, 0x02	; 2
+ 3ca:	09 c0       	rjmp	.+18     	; 0x3de <pwm_data_3+0x180>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if(p3==3)
+ 3cc:	43 e0       	ldi	r20, 0x03	; 3
+ 3ce:	c4 16       	cp	r12, r20
+ 3d0:	d1 04       	cpc	r13, r1
+ 3d2:	29 f4       	brne	.+10     	; 0x3de <pwm_data_3+0x180>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 3d4:	22 0f       	add	r18, r18
+ 3d6:	33 1f       	adc	r19, r19
+ 3d8:	22 0f       	add	r18, r18
+ 3da:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 3dc:	23 60       	ori	r18, 0x03	; 3
+	}
+	if(p4 == 0)
+ 3de:	00 97       	sbiw	r24, 0x00	; 0
+ 3e0:	29 f4       	brne	.+10     	; 0x3ec <pwm_data_3+0x18e>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 3e2:	22 0f       	add	r18, r18
+ 3e4:	33 1f       	adc	r19, r19
+ 3e6:	22 0f       	add	r18, r18
+ 3e8:	33 1f       	adc	r19, r19
+ 3ea:	19 c0       	rjmp	.+50     	; 0x41e <pwm_data_3+0x1c0>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if (p4 == 1)
+ 3ec:	81 30       	cpi	r24, 0x01	; 1
+ 3ee:	91 05       	cpc	r25, r1
+ 3f0:	31 f4       	brne	.+12     	; 0x3fe <pwm_data_3+0x1a0>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+ 3f2:	22 0f       	add	r18, r18
+ 3f4:	33 1f       	adc	r19, r19
+ 3f6:	22 0f       	add	r18, r18
+ 3f8:	33 1f       	adc	r19, r19
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 3fa:	21 60       	ori	r18, 0x01	; 1
+ 3fc:	10 c0       	rjmp	.+32     	; 0x41e <pwm_data_3+0x1c0>
+	}
+	else if(p4 == 2)
+ 3fe:	82 30       	cpi	r24, 0x02	; 2
+ 400:	91 05       	cpc	r25, r1
+ 402:	31 f4       	brne	.+12     	; 0x410 <pwm_data_3+0x1b2>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 404:	22 0f       	add	r18, r18
+ 406:	33 1f       	adc	r19, r19
+ 408:	22 0f       	add	r18, r18
+ 40a:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 40c:	22 60       	ori	r18, 0x02	; 2
+ 40e:	07 c0       	rjmp	.+14     	; 0x41e <pwm_data_3+0x1c0>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if(p4 == 3)
+ 410:	03 97       	sbiw	r24, 0x03	; 3
+ 412:	29 f4       	brne	.+10     	; 0x41e <pwm_data_3+0x1c0>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 414:	22 0f       	add	r18, r18
+ 416:	33 1f       	adc	r19, r19
+ 418:	22 0f       	add	r18, r18
+ 41a:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 41c:	23 60       	ori	r18, 0x03	; 3
+	}
+	return byte_placeholder;
+}
+ 41e:	c9 01       	movw	r24, r18
+ 420:	a8 96       	adiw	r28, 0x28	; 40
+ 422:	0f b6       	in	r0, 0x3f	; 63
+ 424:	f8 94       	cli
+ 426:	de bf       	out	0x3e, r29	; 62
+ 428:	0f be       	out	0x3f, r0	; 63
+ 42a:	cd bf       	out	0x3d, r28	; 61
+ 42c:	cf 91       	pop	r28
+ 42e:	df 91       	pop	r29
+ 430:	1f 91       	pop	r17
+ 432:	0f 91       	pop	r16
+ 434:	ff 90       	pop	r15
+ 436:	ef 90       	pop	r14
+ 438:	df 90       	pop	r13
+ 43a:	cf 90       	pop	r12
+ 43c:	08 95       	ret
+
+0000043e <pwm_data_B>:
+
+
+unsigned int pwm_data_B()
+{
+ 43e:	cf 92       	push	r12
+ 440:	df 92       	push	r13
+ 442:	ef 92       	push	r14
+ 444:	ff 92       	push	r15
+ 446:	0f 93       	push	r16
+ 448:	1f 93       	push	r17
+ 44a:	df 93       	push	r29
+ 44c:	cf 93       	push	r28
+ 44e:	cd b7       	in	r28, 0x3d	; 61
+ 450:	de b7       	in	r29, 0x3e	; 62
+ 452:	a8 97       	sbiw	r28, 0x28	; 40
+ 454:	0f b6       	in	r0, 0x3f	; 63
+ 456:	f8 94       	cli
+ 458:	de bf       	out	0x3e, r29	; 62
+ 45a:	0f be       	out	0x3f, r0	; 63
+ 45c:	cd bf       	out	0x3d, r28	; 61
+ 45e:	fe 01       	movw	r30, r28
+ 460:	31 96       	adiw	r30, 0x01	; 1
+		{
+			cnt1 = cnt;
+		}
+		temp = PINB;
+		if(CHECKBIT(temp, bit_to_check)){
+			data[i] = 1;			
+ 462:	41 e0       	ldi	r20, 0x01	; 1
+ 464:	50 e0       	ldi	r21, 0x00	; 0
+	bit_to_check 		= 0x01;
+	byte_placeholder	= 0x00;
+	byte_placeholder1	= 0xFF80;
+	predata				= 0x00;
+
+	for(i=0;i<16;i++)
+ 466:	9e 01       	movw	r18, r28
+ 468:	2f 5d       	subi	r18, 0xDF	; 223
+ 46a:	3f 4f       	sbci	r19, 0xFF	; 255
+	{
+		cnt1 = 0, cnt=0;
+ 46c:	10 92 00 01 	sts	0x0100, r1
+ 470:	10 92 01 01 	sts	0x0101, r1
+ 474:	10 92 02 01 	sts	0x0102, r1
+ 478:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 47c:	80 91 00 01 	lds	r24, 0x0100
+ 480:	90 91 01 01 	lds	r25, 0x0101
+ 484:	a0 91 02 01 	lds	r26, 0x0102
+ 488:	b0 91 03 01 	lds	r27, 0x0103
+	predata				= 0x00;
+
+	for(i=0;i<16;i++)
+	{
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 48c:	89 2b       	or	r24, r25
+ 48e:	b1 f3       	breq	.-20     	; 0x47c <pwm_data_B+0x3e>
+		{
+			cnt1 = cnt;
+		}
+		temp = PINB;
+		if(CHECKBIT(temp, bit_to_check)){
+ 490:	b0 9b       	sbis	0x16, 0	; 22
+ 492:	03 c0       	rjmp	.+6      	; 0x49a <pwm_data_B+0x5c>
+			data[i] = 1;			
+ 494:	51 83       	std	Z+1, r21	; 0x01
+ 496:	40 83       	st	Z, r20
+ 498:	02 c0       	rjmp	.+4      	; 0x49e <pwm_data_B+0x60>
+			}	
+		else
+			{
+				data[i] =0;	
+ 49a:	11 82       	std	Z+1, r1	; 0x01
+ 49c:	10 82       	st	Z, r1
+ 49e:	32 96       	adiw	r30, 0x02	; 2
+	bit_to_check 		= 0x01;
+	byte_placeholder	= 0x00;
+	byte_placeholder1	= 0xFF80;
+	predata				= 0x00;
+
+	for(i=0;i<16;i++)
+ 4a0:	e2 17       	cp	r30, r18
+ 4a2:	f3 07       	cpc	r31, r19
+ 4a4:	19 f7       	brne	.-58     	; 0x46c <pwm_data_B+0x2e>
+			}
+		
+		//flag++;
+	}
+
+	p1 = get_position(data[0],data[1],data[2],data[3]);
+ 4a6:	6b 81       	ldd	r22, Y+3	; 0x03
+ 4a8:	7c 81       	ldd	r23, Y+4	; 0x04
+ 4aa:	4d 81       	ldd	r20, Y+5	; 0x05
+ 4ac:	5e 81       	ldd	r21, Y+6	; 0x06
+ 4ae:	2f 81       	ldd	r18, Y+7	; 0x07
+ 4b0:	38 85       	ldd	r19, Y+8	; 0x08
+ 4b2:	89 81       	ldd	r24, Y+1	; 0x01
+ 4b4:	9a 81       	ldd	r25, Y+2	; 0x02
+ 4b6:	0e 94 06 01 	call	0x20c	; 0x20c <get_position>
+ 4ba:	8c 01       	movw	r16, r24
+	p2 = get_position(data[4],data[5],data[6],data[7]);
+ 4bc:	6b 85       	ldd	r22, Y+11	; 0x0b
+ 4be:	7c 85       	ldd	r23, Y+12	; 0x0c
+ 4c0:	4d 85       	ldd	r20, Y+13	; 0x0d
+ 4c2:	5e 85       	ldd	r21, Y+14	; 0x0e
+ 4c4:	2f 85       	ldd	r18, Y+15	; 0x0f
+ 4c6:	38 89       	ldd	r19, Y+16	; 0x10
+ 4c8:	89 85       	ldd	r24, Y+9	; 0x09
+ 4ca:	9a 85       	ldd	r25, Y+10	; 0x0a
+ 4cc:	0e 94 06 01 	call	0x20c	; 0x20c <get_position>
+ 4d0:	7c 01       	movw	r14, r24
+	p3 = get_position(data[8],data[9],data[10],data[11]);
+ 4d2:	6b 89       	ldd	r22, Y+19	; 0x13
+ 4d4:	7c 89       	ldd	r23, Y+20	; 0x14
+ 4d6:	4d 89       	ldd	r20, Y+21	; 0x15
+ 4d8:	5e 89       	ldd	r21, Y+22	; 0x16
+ 4da:	2f 89       	ldd	r18, Y+23	; 0x17
+ 4dc:	38 8d       	ldd	r19, Y+24	; 0x18
+ 4de:	89 89       	ldd	r24, Y+17	; 0x11
+ 4e0:	9a 89       	ldd	r25, Y+18	; 0x12
+ 4e2:	0e 94 06 01 	call	0x20c	; 0x20c <get_position>
+ 4e6:	6c 01       	movw	r12, r24
+	p4 = get_position(data[12],data[13],data[14],data[15]);
+ 4e8:	6b 8d       	ldd	r22, Y+27	; 0x1b
+ 4ea:	7c 8d       	ldd	r23, Y+28	; 0x1c
+ 4ec:	4d 8d       	ldd	r20, Y+29	; 0x1d
+ 4ee:	5e 8d       	ldd	r21, Y+30	; 0x1e
+ 4f0:	2f 8d       	ldd	r18, Y+31	; 0x1f
+ 4f2:	38 a1       	ldd	r19, Y+32	; 0x20
+ 4f4:	89 8d       	ldd	r24, Y+25	; 0x19
+ 4f6:	9a 8d       	ldd	r25, Y+26	; 0x1a
+ 4f8:	0e 94 06 01 	call	0x20c	; 0x20c <get_position>
+	
+	if(p1 == 0)
+ 4fc:	01 15       	cp	r16, r1
+ 4fe:	11 05       	cpc	r17, r1
+ 500:	91 f0       	breq	.+36     	; 0x526 <pwm_data_B+0xe8>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if (p1 == 1)
+ 502:	01 30       	cpi	r16, 0x01	; 1
+ 504:	11 05       	cpc	r17, r1
+ 506:	19 f4       	brne	.+6      	; 0x50e <pwm_data_B+0xd0>
+ 508:	21 e0       	ldi	r18, 0x01	; 1
+ 50a:	30 e0       	ldi	r19, 0x00	; 0
+ 50c:	0e c0       	rjmp	.+28     	; 0x52a <pwm_data_B+0xec>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if(p1 == 2)
+ 50e:	02 30       	cpi	r16, 0x02	; 2
+ 510:	11 05       	cpc	r17, r1
+ 512:	19 f4       	brne	.+6      	; 0x51a <pwm_data_B+0xdc>
+ 514:	22 e0       	ldi	r18, 0x02	; 2
+ 516:	30 e0       	ldi	r19, 0x00	; 0
+ 518:	08 c0       	rjmp	.+16     	; 0x52a <pwm_data_B+0xec>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if(p1 ==3)
+ 51a:	03 30       	cpi	r16, 0x03	; 3
+ 51c:	11 05       	cpc	r17, r1
+ 51e:	19 f4       	brne	.+6      	; 0x526 <pwm_data_B+0xe8>
+ 520:	23 e0       	ldi	r18, 0x03	; 3
+ 522:	30 e0       	ldi	r19, 0x00	; 0
+ 524:	02 c0       	rjmp	.+4      	; 0x52a <pwm_data_B+0xec>
+ 526:	20 e0       	ldi	r18, 0x00	; 0
+ 528:	30 e0       	ldi	r19, 0x00	; 0
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	if(p2 == 0)
+ 52a:	e1 14       	cp	r14, r1
+ 52c:	f1 04       	cpc	r15, r1
+ 52e:	29 f4       	brne	.+10     	; 0x53a <pwm_data_B+0xfc>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 530:	22 0f       	add	r18, r18
+ 532:	33 1f       	adc	r19, r19
+ 534:	22 0f       	add	r18, r18
+ 536:	33 1f       	adc	r19, r19
+ 538:	1d c0       	rjmp	.+58     	; 0x574 <pwm_data_B+0x136>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if (p2 == 1)
+ 53a:	41 e0       	ldi	r20, 0x01	; 1
+ 53c:	e4 16       	cp	r14, r20
+ 53e:	f1 04       	cpc	r15, r1
+ 540:	31 f4       	brne	.+12     	; 0x54e <pwm_data_B+0x110>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+ 542:	22 0f       	add	r18, r18
+ 544:	33 1f       	adc	r19, r19
+ 546:	22 0f       	add	r18, r18
+ 548:	33 1f       	adc	r19, r19
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 54a:	21 60       	ori	r18, 0x01	; 1
+ 54c:	13 c0       	rjmp	.+38     	; 0x574 <pwm_data_B+0x136>
+	}
+	else if(p2 == 2)
+ 54e:	42 e0       	ldi	r20, 0x02	; 2
+ 550:	e4 16       	cp	r14, r20
+ 552:	f1 04       	cpc	r15, r1
+ 554:	31 f4       	brne	.+12     	; 0x562 <pwm_data_B+0x124>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 556:	22 0f       	add	r18, r18
+ 558:	33 1f       	adc	r19, r19
+ 55a:	22 0f       	add	r18, r18
+ 55c:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 55e:	22 60       	ori	r18, 0x02	; 2
+ 560:	09 c0       	rjmp	.+18     	; 0x574 <pwm_data_B+0x136>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if(p2==3)
+ 562:	43 e0       	ldi	r20, 0x03	; 3
+ 564:	e4 16       	cp	r14, r20
+ 566:	f1 04       	cpc	r15, r1
+ 568:	29 f4       	brne	.+10     	; 0x574 <pwm_data_B+0x136>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 56a:	22 0f       	add	r18, r18
+ 56c:	33 1f       	adc	r19, r19
+ 56e:	22 0f       	add	r18, r18
+ 570:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 572:	23 60       	ori	r18, 0x03	; 3
+	}
+	if(p3 == 0)
+ 574:	c1 14       	cp	r12, r1
+ 576:	d1 04       	cpc	r13, r1
+ 578:	29 f4       	brne	.+10     	; 0x584 <pwm_data_B+0x146>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 57a:	22 0f       	add	r18, r18
+ 57c:	33 1f       	adc	r19, r19
+ 57e:	22 0f       	add	r18, r18
+ 580:	33 1f       	adc	r19, r19
+ 582:	1d c0       	rjmp	.+58     	; 0x5be <pwm_data_B+0x180>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if (p3 == 1)
+ 584:	41 e0       	ldi	r20, 0x01	; 1
+ 586:	c4 16       	cp	r12, r20
+ 588:	d1 04       	cpc	r13, r1
+ 58a:	31 f4       	brne	.+12     	; 0x598 <pwm_data_B+0x15a>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+ 58c:	22 0f       	add	r18, r18
+ 58e:	33 1f       	adc	r19, r19
+ 590:	22 0f       	add	r18, r18
+ 592:	33 1f       	adc	r19, r19
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 594:	21 60       	ori	r18, 0x01	; 1
+ 596:	13 c0       	rjmp	.+38     	; 0x5be <pwm_data_B+0x180>
+	}
+	else if(p3 == 2)
+ 598:	42 e0       	ldi	r20, 0x02	; 2
+ 59a:	c4 16       	cp	r12, r20
+ 59c:	d1 04       	cpc	r13, r1
+ 59e:	31 f4       	brne	.+12     	; 0x5ac <pwm_data_B+0x16e>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 5a0:	22 0f       	add	r18, r18
+ 5a2:	33 1f       	adc	r19, r19
+ 5a4:	22 0f       	add	r18, r18
+ 5a6:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 5a8:	22 60       	ori	r18, 0x02	; 2
+ 5aa:	09 c0       	rjmp	.+18     	; 0x5be <pwm_data_B+0x180>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if(p3==3)
+ 5ac:	43 e0       	ldi	r20, 0x03	; 3
+ 5ae:	c4 16       	cp	r12, r20
+ 5b0:	d1 04       	cpc	r13, r1
+ 5b2:	29 f4       	brne	.+10     	; 0x5be <pwm_data_B+0x180>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 5b4:	22 0f       	add	r18, r18
+ 5b6:	33 1f       	adc	r19, r19
+ 5b8:	22 0f       	add	r18, r18
+ 5ba:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 5bc:	23 60       	ori	r18, 0x03	; 3
+	}
+	if(p4 == 0)
+ 5be:	00 97       	sbiw	r24, 0x00	; 0
+ 5c0:	29 f4       	brne	.+10     	; 0x5cc <pwm_data_B+0x18e>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 5c2:	22 0f       	add	r18, r18
+ 5c4:	33 1f       	adc	r19, r19
+ 5c6:	22 0f       	add	r18, r18
+ 5c8:	33 1f       	adc	r19, r19
+ 5ca:	19 c0       	rjmp	.+50     	; 0x5fe <pwm_data_B+0x1c0>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if (p4 == 1)
+ 5cc:	81 30       	cpi	r24, 0x01	; 1
+ 5ce:	91 05       	cpc	r25, r1
+ 5d0:	31 f4       	brne	.+12     	; 0x5de <pwm_data_B+0x1a0>
+	{
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+ 5d2:	22 0f       	add	r18, r18
+ 5d4:	33 1f       	adc	r19, r19
+ 5d6:	22 0f       	add	r18, r18
+ 5d8:	33 1f       	adc	r19, r19
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 5da:	21 60       	ori	r18, 0x01	; 1
+ 5dc:	10 c0       	rjmp	.+32     	; 0x5fe <pwm_data_B+0x1c0>
+	}
+	else if(p4 == 2)
+ 5de:	82 30       	cpi	r24, 0x02	; 2
+ 5e0:	91 05       	cpc	r25, r1
+ 5e2:	31 f4       	brne	.+12     	; 0x5f0 <pwm_data_B+0x1b2>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 5e4:	22 0f       	add	r18, r18
+ 5e6:	33 1f       	adc	r19, r19
+ 5e8:	22 0f       	add	r18, r18
+ 5ea:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x00;				
+		byte_placeholder = byte_placeholder<<1;
+ 5ec:	22 60       	ori	r18, 0x02	; 2
+ 5ee:	07 c0       	rjmp	.+14     	; 0x5fe <pwm_data_B+0x1c0>
+		byte_placeholder = byte_placeholder|bit_to_shift;
+	}
+	else if(p4 == 3)
+ 5f0:	03 97       	sbiw	r24, 0x03	; 3
+ 5f2:	29 f4       	brne	.+10     	; 0x5fe <pwm_data_B+0x1c0>
+	{
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 5f4:	22 0f       	add	r18, r18
+ 5f6:	33 1f       	adc	r19, r19
+ 5f8:	22 0f       	add	r18, r18
+ 5fa:	33 1f       	adc	r19, r19
+		bit_to_shift = 0x01;				
+		byte_placeholder = byte_placeholder<<1;
+		byte_placeholder = byte_placeholder|bit_to_shift;
+ 5fc:	23 60       	ori	r18, 0x03	; 3
+	}
+	return byte_placeholder;
+}
+ 5fe:	c9 01       	movw	r24, r18
+ 600:	a8 96       	adiw	r28, 0x28	; 40
+ 602:	0f b6       	in	r0, 0x3f	; 63
+ 604:	f8 94       	cli
+ 606:	de bf       	out	0x3e, r29	; 62
+ 608:	0f be       	out	0x3f, r0	; 63
+ 60a:	cd bf       	out	0x3d, r28	; 61
+ 60c:	cf 91       	pop	r28
+ 60e:	df 91       	pop	r29
+ 610:	1f 91       	pop	r17
+ 612:	0f 91       	pop	r16
+ 614:	ff 90       	pop	r15
+ 616:	ef 90       	pop	r14
+ 618:	df 90       	pop	r13
+ 61a:	cf 90       	pop	r12
+ 61c:	08 95       	ret
+
+0000061e <main>:
+
+
+
+
+//Main Program----------------------------------------------------------------------------
+int main(void){
+ 61e:	df 92       	push	r13
+ 620:	ef 92       	push	r14
+ 622:	ff 92       	push	r15
+ 624:	0f 93       	push	r16
+ 626:	1f 93       	push	r17
+
+	serial_init(); 
+ 628:	0e 94 67 00 	call	0xce	; 0xce <serial_init>
+	Timer1_init(); 
+ 62c:	0e 94 81 00 	call	0x102	; 0x102 <Timer1_init>
+	DDRA=0x00;
+ 630:	1a ba       	out	0x1a, r1	; 26
+	DDRB = 0x00;
+ 632:	17 ba       	out	0x17, r1	; 23
+	PORTB = 0xFF;
+ 634:	8f ef       	ldi	r24, 0xFF	; 255
+ 636:	88 bb       	out	0x18, r24	; 24
+	PORTA=0xFF;
+ 638:	8b bb       	out	0x1b, r24	; 27
+	TIMSK |= 0x04;
+ 63a:	87 b7       	in	r24, 0x37	; 55
+ 63c:	84 60       	ori	r24, 0x04	; 4
+ 63e:	87 bf       	out	0x37, r24	; 55
+	SREG |= 0x80;
+ 640:	8f b7       	in	r24, 0x3f	; 63
+ 642:	80 68       	ori	r24, 0x80	; 128
+ 644:	8f bf       	out	0x3f, r24	; 63
+}
+
+void transmit(unsigned char data)
+{
+while(!(UCSR1A & (1<<UDRE1)));
+UDR1=data;
+ 646:	dd 24       	eor	r13, r13
+ 648:	da 94       	dec	r13
+	TIMSK |= 0x04;
+	SREG |= 0x80;
+	unsigned int c,d,j, data[10];
+	while(1){
+
+	pwm_sync();
+ 64a:	e0 e8       	ldi	r30, 0x80	; 128
+ 64c:	ee 2e       	mov	r14, r30
+ 64e:	0e 94 b8 00 	call	0x170	; 0x170 <pwm_sync>
+
+	data[0]=pwm_data_3();
+ 652:	0e 94 2f 01 	call	0x25e	; 0x25e <pwm_data_3>
+ 656:	18 2f       	mov	r17, r24
+	data[1]=pwm_data_3();
+ 658:	0e 94 2f 01 	call	0x25e	; 0x25e <pwm_data_3>
+ 65c:	08 2f       	mov	r16, r24
+	data[2]=pwm_data_3();
+ 65e:	0e 94 2f 01 	call	0x25e	; 0x25e <pwm_data_3>
+ 662:	f8 2e       	mov	r15, r24
+	data[3]=pwm_data_3();
+ 664:	0e 94 2f 01 	call	0x25e	; 0x25e <pwm_data_3>
+ 668:	98 2f       	mov	r25, r24
+                                         //When set, these two bits turn on the serial buffers to allow for serial communications
+}
+
+void transmit(unsigned char data)
+{
+while(!(UCSR1A & (1<<UDRE1)));
+ 66a:	80 91 9b 00 	lds	r24, 0x009B
+ 66e:	85 ff       	sbrs	r24, 5
+ 670:	fc cf       	rjmp	.-8      	; 0x66a <main+0x4c>
+UDR1=data;
+ 672:	d0 92 9c 00 	sts	0x009C, r13
+                                         //When set, these two bits turn on the serial buffers to allow for serial communications
+}
+
+void transmit(unsigned char data)
+{
+while(!(UCSR1A & (1<<UDRE1)));
+ 676:	80 91 9b 00 	lds	r24, 0x009B
+ 67a:	85 ff       	sbrs	r24, 5
+ 67c:	fc cf       	rjmp	.-8      	; 0x676 <main+0x58>
+UDR1=data;
+ 67e:	e0 92 9c 00 	sts	0x009C, r14
+                                         //When set, these two bits turn on the serial buffers to allow for serial communications
+}
+
+void transmit(unsigned char data)
+{
+while(!(UCSR1A & (1<<UDRE1)));
+ 682:	80 91 9b 00 	lds	r24, 0x009B
+ 686:	85 ff       	sbrs	r24, 5
+ 688:	fc cf       	rjmp	.-8      	; 0x682 <main+0x64>
+UDR1=data;
+ 68a:	10 93 9c 00 	sts	0x009C, r17
+                                         //When set, these two bits turn on the serial buffers to allow for serial communications
+}
+
+void transmit(unsigned char data)
+{
+while(!(UCSR1A & (1<<UDRE1)));
+ 68e:	80 91 9b 00 	lds	r24, 0x009B
+ 692:	85 ff       	sbrs	r24, 5
+ 694:	fc cf       	rjmp	.-8      	; 0x68e <main+0x70>
+UDR1=data;
+ 696:	00 93 9c 00 	sts	0x009C, r16
+                                         //When set, these two bits turn on the serial buffers to allow for serial communications
+}
+
+void transmit(unsigned char data)
+{
+while(!(UCSR1A & (1<<UDRE1)));
+ 69a:	80 91 9b 00 	lds	r24, 0x009B
+ 69e:	85 ff       	sbrs	r24, 5
+ 6a0:	fc cf       	rjmp	.-8      	; 0x69a <main+0x7c>
+UDR1=data;
+ 6a2:	f0 92 9c 00 	sts	0x009C, r15
+                                         //When set, these two bits turn on the serial buffers to allow for serial communications
+}
+
+void transmit(unsigned char data)
+{
+while(!(UCSR1A & (1<<UDRE1)));
+ 6a6:	80 91 9b 00 	lds	r24, 0x009B
+ 6aa:	85 ff       	sbrs	r24, 5
+ 6ac:	fc cf       	rjmp	.-8      	; 0x6a6 <main+0x88>
+UDR1=data;
+ 6ae:	90 93 9c 00 	sts	0x009C, r25
+                                         //When set, these two bits turn on the serial buffers to allow for serial communications
+}
+
+void transmit(unsigned char data)
+{
+while(!(UCSR1A & (1<<UDRE1)));
+ 6b2:	80 91 9b 00 	lds	r24, 0x009B
+ 6b6:	85 ff       	sbrs	r24, 5
+ 6b8:	fc cf       	rjmp	.-8      	; 0x6b2 <main+0x94>
+UDR1=data;
+ 6ba:	10 92 9c 00 	sts	0x009C, r1
+ 6be:	c7 cf       	rjmp	.-114    	; 0x64e <main+0x30>
+
+000006c0 <_exit>:
+ 6c0:	f8 94       	cli
+
+000006c2 <__stop_program>:
+ 6c2:	ff cf       	rjmp	.-2      	; 0x6c2 <__stop_program>

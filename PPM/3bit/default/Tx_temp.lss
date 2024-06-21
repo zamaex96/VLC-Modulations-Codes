@@ -1,0 +1,2226 @@
+
+Tx_temp.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000aea  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000004  00800100  00800100  00000b5e  2**0
+                  ALLOC
+  2 .debug_aranges 00000020  00000000  00000000  00000b5e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 00000100  00000000  00000000  00000b7e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   000005ca  00000000  00000000  00000c7e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 0000022f  00000000  00000000  00001248  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   000009c0  00000000  00000000  00001477  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000110  00000000  00000000  00001e38  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000001ba  00000000  00000000  00001f48  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    000001b9  00000000  00000000  00002102  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 8b 00 	jmp	0x116	; 0x116 <__vector_14>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ea ee       	ldi	r30, 0xEA	; 234
+  a0:	fa e0       	ldi	r31, 0x0A	; 10
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 30       	cpi	r26, 0x00	; 0
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a0 e0       	ldi	r26, 0x00	; 0
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a4 30       	cpi	r26, 0x04	; 4
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 55 05 	call	0xaaa	; 0xaaa <main>
+  c6:	0c 94 73 05 	jmp	0xae6	; 0xae6 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <serial_init>:
+{
+  unsigned int baudrate[15] ={416,207,103,68,51,34,25,16,12,8,3,3,1,0};
+ 
+
+
+  UBRR1L = baudrate[2]; 
+  ce:	87 e6       	ldi	r24, 0x67	; 103
+  d0:	80 93 99 00 	sts	0x0099, r24
+  UBRR1H = baudrate[2]>>8;      
+  d4:	10 92 98 00 	sts	0x0098, r1
+  
+  UBRR0L = baudrate[2];
+  d8:	89 b9       	out	0x09, r24	; 9
+  UBRR0H = baudrate[2]>>8;               // 4:19200bps; 6:38400; 7:57600; 8:76800; 9;115200
+  da:	10 92 90 00 	sts	0x0090, r1
+  
+
+
+  
+  UCSR1C = (1 << UCSZ1) | (1 << UCSZ0);  // no parity ,  stop bit 1 , data 8
+  de:	96 e0       	ldi	r25, 0x06	; 6
+  e0:	90 93 9d 00 	sts	0x009D, r25
+ UCSR1B = (1 << TXEN1) | (1 << RXEN1);
+  e4:	88 e1       	ldi	r24, 0x18	; 24
+  e6:	80 93 9a 00 	sts	0x009A, r24
+  // UCSR1A = (1 << U2X0);                //double baudrate 
+ UCSR0C = (1 << UCSZ1) | (1 << UCSZ0);  //serial 8-bit format. no parity, stop bit 1, data 8
+  ea:	90 93 95 00 	sts	0x0095, r25
+  UCSR0B = (1 << TXEN0) | (1 << RXEN0);    //enable tx rx located in control reg UCSR1B
+  ee:	8a b9       	out	0x0a, r24	; 10
+                                         //When set, these two bits turn on the serial buffers to allow for serial communications
+}
+  f0:	08 95       	ret
+
+000000f2 <Timer1_init>:
+{
+
+	//unsigned int cycles;
+	unsigned long cycles;
+  	// Initializing Timer
+	TCCR1A = 0;                 // clear control register A 
+  f2:	1f bc       	out	0x2f, r1	; 47
+	TCCR1B |= (1 << WGM13); // set mode 8: phase and frequency correct pwm, stop the timer
+  f4:	8e b5       	in	r24, 0x2e	; 46
+  f6:	80 61       	ori	r24, 0x10	; 16
+  f8:	8e bd       	out	0x2e, r24	; 46
+ 	
+	unsigned char oldSREG = SREG;
+  fa:	2f b7       	in	r18, 0x3f	; 63
+	cli();
+  fc:	f8 94       	cli
+
+	//cycles = 20; // 2/(16000000/8)*10 = 10us, *20 = 20us (50KHz)
+	cycles = 120;	// 2/(16000000/64)*125 = 1ms , *25 = 0.2ms
+	ICR1 = cycles;
+  fe:	88 e7       	ldi	r24, 0x78	; 120
+ 100:	90 e0       	ldi	r25, 0x00	; 0
+ 102:	97 bd       	out	0x27, r25	; 39
+ 104:	86 bd       	out	0x26, r24	; 38
+	//sei();
+	SREG = oldSREG;
+ 106:	2f bf       	out	0x3f, r18	; 63
+
+	
+	TCCR1B &= ~((1 << CS10) | (1 << CS11) | (1 << CS12));
+ 108:	8e b5       	in	r24, 0x2e	; 46
+ 10a:	88 7f       	andi	r24, 0xF8	; 248
+ 10c:	8e bd       	out	0x2e, r24	; 46
+	TCCR1B |= (1 << CS11) ;	// prescale: clk / 8
+ 10e:	8e b5       	in	r24, 0x2e	; 46
+ 110:	82 60       	ori	r24, 0x02	; 2
+ 112:	8e bd       	out	0x2e, r24	; 46
+	//TCCR1B |= (1 << CS11) | (1 << CS10);	// prescale: clk / 64
+	//TCCR1B |= (1 << CS11) | (1 << CS10);	// prescale: clk / 64
+
+	
+
+}
+ 114:	08 95       	ret
+
+00000116 <__vector_14>:
+
+ISR(TIMER1_OVF_vect)
+{
+ 116:	1f 92       	push	r1
+ 118:	0f 92       	push	r0
+ 11a:	0f b6       	in	r0, 0x3f	; 63
+ 11c:	0f 92       	push	r0
+ 11e:	11 24       	eor	r1, r1
+ 120:	8f 93       	push	r24
+ 122:	9f 93       	push	r25
+ 124:	af 93       	push	r26
+ 126:	bf 93       	push	r27
+	cnt++;
+ 128:	80 91 00 01 	lds	r24, 0x0100
+ 12c:	90 91 01 01 	lds	r25, 0x0101
+ 130:	a0 91 02 01 	lds	r26, 0x0102
+ 134:	b0 91 03 01 	lds	r27, 0x0103
+ 138:	01 96       	adiw	r24, 0x01	; 1
+ 13a:	a1 1d       	adc	r26, r1
+ 13c:	b1 1d       	adc	r27, r1
+ 13e:	80 93 00 01 	sts	0x0100, r24
+ 142:	90 93 01 01 	sts	0x0101, r25
+ 146:	a0 93 02 01 	sts	0x0102, r26
+ 14a:	b0 93 03 01 	sts	0x0103, r27
+}
+ 14e:	bf 91       	pop	r27
+ 150:	af 91       	pop	r26
+ 152:	9f 91       	pop	r25
+ 154:	8f 91       	pop	r24
+ 156:	0f 90       	pop	r0
+ 158:	0f be       	out	0x3f, r0	; 63
+ 15a:	0f 90       	pop	r0
+ 15c:	1f 90       	pop	r1
+ 15e:	18 95       	reti
+
+00000160 <transmit0>:
+
+
+void transmit0(unsigned char data)
+{
+while(!(UCSR0A & (1<<UDRE0)));
+ 160:	5d 9b       	sbis	0x0b, 5	; 11
+ 162:	fe cf       	rjmp	.-4      	; 0x160 <transmit0>
+UDR0=data;
+ 164:	8c b9       	out	0x0c, r24	; 12
+
+}
+ 166:	08 95       	ret
+
+00000168 <Rxdata>:
+
+unsigned int Rxdata (void)
+{
+
+	// Wait for empty transmit buffer 
+	while ( !(UCSR0A & (1<<RXC0)) );
+ 168:	5f 9b       	sbis	0x0b, 7	; 11
+ 16a:	fe cf       	rjmp	.-4      	; 0x168 <Rxdata>
+
+	// Receive data from buffer, return the data 
+	return UDR0;	
+ 16c:	8c b1       	in	r24, 0x0c	; 12
+
+}
+ 16e:	90 e0       	ldi	r25, 0x00	; 0
+ 170:	08 95       	ret
+
+00000172 <Rxdata1>:
+
+unsigned int Rxdata1 (void)
+{
+
+	// Wait for empty transmit buffer 
+	while ( !(UCSR1A & (1<<RXC1)) );
+ 172:	80 91 9b 00 	lds	r24, 0x009B
+ 176:	87 ff       	sbrs	r24, 7
+ 178:	fc cf       	rjmp	.-8      	; 0x172 <Rxdata1>
+
+	// Receive data from buffer, return the data 
+	return UDR1;	
+ 17a:	80 91 9c 00 	lds	r24, 0x009C
+
+}
+ 17e:	90 e0       	ldi	r25, 0x00	; 0
+ 180:	08 95       	ret
+
+00000182 <transmit1>:
+
+void transmit1(unsigned char data)
+{
+ 182:	98 2f       	mov	r25, r24
+while(!(UCSR1A & (1<<UDRE1)));
+ 184:	80 91 9b 00 	lds	r24, 0x009B
+ 188:	85 ff       	sbrs	r24, 5
+ 18a:	fc cf       	rjmp	.-8      	; 0x184 <transmit1+0x2>
+UDR1=data;
+ 18c:	90 93 9c 00 	sts	0x009C, r25
+
+}
+ 190:	08 95       	ret
+
+00000192 <delay_in_signal>:
+
+
+
+ unsigned int delay_in_signal(int i){
+ 192:	ac 01       	movw	r20, r24
+ 194:	20 e0       	ldi	r18, 0x00	; 0
+ 196:	30 e0       	ldi	r19, 0x00	; 0
+ 198:	14 c0       	rjmp	.+40     	; 0x1c2 <delay_in_signal+0x30>
+ 	
+	int k=0,cnt1=0;
+ 	for(k =0;k<i;k++)
+	{
+		cnt1 = 0, cnt=0;
+ 19a:	10 92 00 01 	sts	0x0100, r1
+ 19e:	10 92 01 01 	sts	0x0101, r1
+ 1a2:	10 92 02 01 	sts	0x0102, r1
+ 1a6:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 1aa:	80 91 00 01 	lds	r24, 0x0100
+ 1ae:	90 91 01 01 	lds	r25, 0x0101
+ 1b2:	a0 91 02 01 	lds	r26, 0x0102
+ 1b6:	b0 91 03 01 	lds	r27, 0x0103
+ 	
+	int k=0,cnt1=0;
+ 	for(k =0;k<i;k++)
+	{
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 1ba:	89 2b       	or	r24, r25
+ 1bc:	b1 f3       	breq	.-20     	; 0x1aa <delay_in_signal+0x18>
+
+
+ unsigned int delay_in_signal(int i){
+ 	
+	int k=0,cnt1=0;
+ 	for(k =0;k<i;k++)
+ 1be:	2f 5f       	subi	r18, 0xFF	; 255
+ 1c0:	3f 4f       	sbci	r19, 0xFF	; 255
+ 1c2:	24 17       	cp	r18, r20
+ 1c4:	35 07       	cpc	r19, r21
+ 1c6:	4c f3       	brlt	.-46     	; 0x19a <delay_in_signal+0x8>
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+		}
+	}
+ }
+ 1c8:	08 95       	ret
+
+000001ca <send_code_portC>:
+
+
+// Sending data using port C
+
+unsigned int send_code_portC(char data)
+{
+ 1ca:	1f 93       	push	r17
+ 1cc:	f8 2f       	mov	r31, r24
+ 1ce:	e0 e8       	ldi	r30, 0x80	; 128
+ 1d0:	60 e0       	ldi	r22, 0x00	; 0
+ 1d2:	70 e0       	ldi	r23, 0x00	; 0
+ 1d4:	47 e0       	ldi	r20, 0x07	; 7
+ 1d6:	50 e0       	ldi	r21, 0x00	; 0
+			delay_in_signal(i);
+		}
+			
+		if (!(CHECKBIT(data, bit_to_check)))
+		{
+			PORTC= 0x07;
+ 1d8:	17 e0       	ldi	r17, 0x07	; 7
+ 1da:	1c c0       	rjmp	.+56     	; 0x214 <send_code_portC+0x4a>
+
+
+// Sending data using port C
+
+unsigned int send_code_portC(char data)
+{
+ 1dc:	20 e0       	ldi	r18, 0x00	; 0
+ 1de:	30 e0       	ldi	r19, 0x00	; 0
+ unsigned int delay_in_signal(int i){
+ 	
+	int k=0,cnt1=0;
+ 	for(k =0;k<i;k++)
+	{
+		cnt1 = 0, cnt=0;
+ 1e0:	10 92 00 01 	sts	0x0100, r1
+ 1e4:	10 92 01 01 	sts	0x0101, r1
+ 1e8:	10 92 02 01 	sts	0x0102, r1
+ 1ec:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 1f0:	80 91 00 01 	lds	r24, 0x0100
+ 1f4:	90 91 01 01 	lds	r25, 0x0101
+ 1f8:	a0 91 02 01 	lds	r26, 0x0102
+ 1fc:	b0 91 03 01 	lds	r27, 0x0103
+ 	
+	int k=0,cnt1=0;
+ 	for(k =0;k<i;k++)
+	{
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 200:	89 2b       	or	r24, r25
+ 202:	b1 f3       	breq	.-20     	; 0x1f0 <send_code_portC+0x26>
+
+
+ unsigned int delay_in_signal(int i){
+ 	
+	int k=0,cnt1=0;
+ 	for(k =0;k<i;k++)
+ 204:	2f 5f       	subi	r18, 0xFF	; 255
+ 206:	3f 4f       	sbci	r19, 0xFF	; 255
+ 208:	26 17       	cp	r18, r22
+ 20a:	37 07       	cpc	r19, r23
+ 20c:	4c f3       	brlt	.-46     	; 0x1e0 <send_code_portC+0x16>
+		else
+		{	
+			PORTC = 0x00;
+		}
+		flag++;
+		bit_to_check = bit_to_check >> 1;
+ 20e:	e6 95       	lsr	r30
+		if(j>0)
+		{
+			delay_in_signal(j);
+		}
+		i++;
+		j--;
+ 210:	41 50       	subi	r20, 0x01	; 1
+ 212:	50 40       	sbci	r21, 0x00	; 0
+		if(i > 0)
+		{
+			delay_in_signal(i);
+		}
+			
+		if (!(CHECKBIT(data, bit_to_check)))
+ 214:	8e 2f       	mov	r24, r30
+ 216:	8f 23       	and	r24, r31
+ 218:	11 f4       	brne	.+4      	; 0x21e <send_code_portC+0x54>
+		{
+			PORTC= 0x07;
+ 21a:	15 bb       	out	0x15, r17	; 21
+ 21c:	01 c0       	rjmp	.+2      	; 0x220 <send_code_portC+0x56>
+		}
+		else
+		{	
+			PORTC = 0x00;
+ 21e:	15 ba       	out	0x15, r1	; 21
+		}
+		flag++;
+ 220:	6f 5f       	subi	r22, 0xFF	; 255
+ 222:	7f 4f       	sbci	r23, 0xFF	; 255
+		bit_to_check = bit_to_check >> 1;
+//		_delay_us(50);
+		cnt1 = 0, cnt=0;
+ 224:	10 92 00 01 	sts	0x0100, r1
+ 228:	10 92 01 01 	sts	0x0101, r1
+ 22c:	10 92 02 01 	sts	0x0102, r1
+ 230:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 234:	80 91 00 01 	lds	r24, 0x0100
+ 238:	90 91 01 01 	lds	r25, 0x0101
+ 23c:	a0 91 02 01 	lds	r26, 0x0102
+ 240:	b0 91 03 01 	lds	r27, 0x0103
+		}
+		flag++;
+		bit_to_check = bit_to_check >> 1;
+//		_delay_us(50);
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 244:	89 2b       	or	r24, r25
+ 246:	b1 f3       	breq	.-20     	; 0x234 <send_code_portC+0x6a>
+		{
+			cnt1 = cnt;
+		}
+		PORTC = 0x07;
+ 248:	15 bb       	out	0x15, r17	; 21
+		if(j>0)
+ 24a:	41 15       	cp	r20, r1
+ 24c:	51 05       	cpc	r21, r1
+ 24e:	d1 f0       	breq	.+52     	; 0x284 <send_code_portC+0xba>
+ 250:	20 e0       	ldi	r18, 0x00	; 0
+ 252:	30 e0       	ldi	r19, 0x00	; 0
+ 254:	14 c0       	rjmp	.+40     	; 0x27e <send_code_portC+0xb4>
+ unsigned int delay_in_signal(int i){
+ 	
+	int k=0,cnt1=0;
+ 	for(k =0;k<i;k++)
+	{
+		cnt1 = 0, cnt=0;
+ 256:	10 92 00 01 	sts	0x0100, r1
+ 25a:	10 92 01 01 	sts	0x0101, r1
+ 25e:	10 92 02 01 	sts	0x0102, r1
+ 262:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 266:	80 91 00 01 	lds	r24, 0x0100
+ 26a:	90 91 01 01 	lds	r25, 0x0101
+ 26e:	a0 91 02 01 	lds	r26, 0x0102
+ 272:	b0 91 03 01 	lds	r27, 0x0103
+ 	
+	int k=0,cnt1=0;
+ 	for(k =0;k<i;k++)
+	{
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 276:	89 2b       	or	r24, r25
+ 278:	b1 f3       	breq	.-20     	; 0x266 <send_code_portC+0x9c>
+
+
+ unsigned int delay_in_signal(int i){
+ 	
+	int k=0,cnt1=0;
+ 	for(k =0;k<i;k++)
+ 27a:	2f 5f       	subi	r18, 0xFF	; 255
+ 27c:	3f 4f       	sbci	r19, 0xFF	; 255
+ 27e:	24 17       	cp	r18, r20
+ 280:	35 07       	cpc	r19, r21
+ 282:	4c f3       	brlt	.-46     	; 0x256 <send_code_portC+0x8c>
+
+unsigned int send_code_portC(char data)
+{
+	unsigned char bit_to_check=0x80;
+	unsigned int flag=0,cnt1=0,k=0,i=0,j=7;
+	while(flag<8)
+ 284:	68 30       	cpi	r22, 0x08	; 8
+ 286:	71 05       	cpc	r23, r1
+ 288:	09 f0       	breq	.+2      	; 0x28c <send_code_portC+0xc2>
+ 28a:	a8 cf       	rjmp	.-176    	; 0x1dc <send_code_portC+0x12>
+		j--;
+	}
+	
+
+	return 1;
+}
+ 28c:	81 e0       	ldi	r24, 0x01	; 1
+ 28e:	90 e0       	ldi	r25, 0x00	; 0
+ 290:	1f 91       	pop	r17
+ 292:	08 95       	ret
+
+00000294 <ppm_test>:
+
+	unsigned char bit_to_check=0x80;
+	int k=0, cnt1=0;
+	
+
+}
+ 294:	08 95       	ret
+
+00000296 <send_data_ppm>:
+
+
+unsigned int send_data_ppm(char data)
+{
+ 296:	28 2f       	mov	r18, r24
+	unsigned char bit_to_check=0x80;
+	unsigned char bit_to_check_2=0x08;
+	int k=0, cnt1=0;
+//	for(k=0;k<4;k++)
+//	{
+		if (!(CHECKBIT(data, bit_to_check)))
+ 298:	87 fd       	sbrc	r24, 7
+ 29a:	02 c0       	rjmp	.+4      	; 0x2a0 <send_data_ppm+0xa>
+		{
+			PORTC= 0x00;
+ 29c:	15 ba       	out	0x15, r1	; 21
+ 29e:	02 c0       	rjmp	.+4      	; 0x2a4 <send_data_ppm+0xe>
+		}
+		else
+		{	
+			PORTC = 0x07;
+ 2a0:	87 e0       	ldi	r24, 0x07	; 7
+ 2a2:	85 bb       	out	0x15, r24	; 21
+		}
+
+		cnt1 = 0, cnt=0;
+ 2a4:	10 92 00 01 	sts	0x0100, r1
+ 2a8:	10 92 01 01 	sts	0x0101, r1
+ 2ac:	10 92 02 01 	sts	0x0102, r1
+ 2b0:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 2b4:	80 91 00 01 	lds	r24, 0x0100
+ 2b8:	90 91 01 01 	lds	r25, 0x0101
+ 2bc:	a0 91 02 01 	lds	r26, 0x0102
+ 2c0:	b0 91 03 01 	lds	r27, 0x0103
+		{	
+			PORTC = 0x07;
+		}
+
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 2c4:	89 2b       	or	r24, r25
+ 2c6:	b1 f3       	breq	.-20     	; 0x2b4 <send_data_ppm+0x1e>
+		{
+			cnt1 = cnt;
+		}
+		PORTC= 0x00;
+ 2c8:	15 ba       	out	0x15, r1	; 21
+		cnt1 = 0, cnt=0;
+ 2ca:	10 92 00 01 	sts	0x0100, r1
+ 2ce:	10 92 01 01 	sts	0x0101, r1
+ 2d2:	10 92 02 01 	sts	0x0102, r1
+ 2d6:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 2da:	80 91 00 01 	lds	r24, 0x0100
+ 2de:	90 91 01 01 	lds	r25, 0x0101
+ 2e2:	a0 91 02 01 	lds	r26, 0x0102
+ 2e6:	b0 91 03 01 	lds	r27, 0x0103
+		{
+			cnt1 = cnt;
+		}
+		PORTC= 0x00;
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 2ea:	89 2b       	or	r24, r25
+ 2ec:	b1 f3       	breq	.-20     	; 0x2da <send_data_ppm+0x44>
+		{
+			cnt1 = cnt;
+		}
+		cnt1 = 0, cnt=0;
+ 2ee:	10 92 00 01 	sts	0x0100, r1
+ 2f2:	10 92 01 01 	sts	0x0101, r1
+ 2f6:	10 92 02 01 	sts	0x0102, r1
+ 2fa:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 2fe:	80 91 00 01 	lds	r24, 0x0100
+ 302:	90 91 01 01 	lds	r25, 0x0101
+ 306:	a0 91 02 01 	lds	r26, 0x0102
+ 30a:	b0 91 03 01 	lds	r27, 0x0103
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+		}
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 30e:	89 2b       	or	r24, r25
+ 310:	b1 f3       	breq	.-20     	; 0x2fe <send_data_ppm+0x68>
+		{
+			cnt1 = cnt;
+		}
+		cnt1 = 0, cnt=0;
+ 312:	10 92 00 01 	sts	0x0100, r1
+ 316:	10 92 01 01 	sts	0x0101, r1
+ 31a:	10 92 02 01 	sts	0x0102, r1
+ 31e:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 322:	80 91 00 01 	lds	r24, 0x0100
+ 326:	90 91 01 01 	lds	r25, 0x0101
+ 32a:	a0 91 02 01 	lds	r26, 0x0102
+ 32e:	b0 91 03 01 	lds	r27, 0x0103
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+		}
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 332:	89 2b       	or	r24, r25
+ 334:	b1 f3       	breq	.-20     	; 0x322 <send_data_ppm+0x8c>
+		{
+			cnt1 = cnt;
+		}
+		bit_to_check = bit_to_check >> 1;
+		cnt1 = 0, cnt=0;
+ 336:	10 92 00 01 	sts	0x0100, r1
+ 33a:	10 92 01 01 	sts	0x0101, r1
+ 33e:	10 92 02 01 	sts	0x0102, r1
+ 342:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 346:	80 91 00 01 	lds	r24, 0x0100
+ 34a:	90 91 01 01 	lds	r25, 0x0101
+ 34e:	a0 91 02 01 	lds	r26, 0x0102
+ 352:	b0 91 03 01 	lds	r27, 0x0103
+		{
+			cnt1 = cnt;
+		}
+		bit_to_check = bit_to_check >> 1;
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 356:	89 2b       	or	r24, r25
+ 358:	b1 f3       	breq	.-20     	; 0x346 <send_data_ppm+0xb0>
+		{
+			cnt1 = cnt;
+		}
+		if (!(CHECKBIT(data, bit_to_check)))
+ 35a:	26 fd       	sbrc	r18, 6
+ 35c:	02 c0       	rjmp	.+4      	; 0x362 <send_data_ppm+0xcc>
+		{
+			PORTC= 0x00;
+ 35e:	15 ba       	out	0x15, r1	; 21
+ 360:	02 c0       	rjmp	.+4      	; 0x366 <send_data_ppm+0xd0>
+		}
+		else
+		{	
+			PORTC = 0x07;
+ 362:	87 e0       	ldi	r24, 0x07	; 7
+ 364:	85 bb       	out	0x15, r24	; 21
+		}
+		cnt1 = 0, cnt=0;
+ 366:	10 92 00 01 	sts	0x0100, r1
+ 36a:	10 92 01 01 	sts	0x0101, r1
+ 36e:	10 92 02 01 	sts	0x0102, r1
+ 372:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 376:	80 91 00 01 	lds	r24, 0x0100
+ 37a:	90 91 01 01 	lds	r25, 0x0101
+ 37e:	a0 91 02 01 	lds	r26, 0x0102
+ 382:	b0 91 03 01 	lds	r27, 0x0103
+		else
+		{	
+			PORTC = 0x07;
+		}
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 386:	89 2b       	or	r24, r25
+ 388:	b1 f3       	breq	.-20     	; 0x376 <send_data_ppm+0xe0>
+		{
+			cnt1 = cnt;
+		}
+		PORTC = 0x00;
+ 38a:	15 ba       	out	0x15, r1	; 21
+		cnt1 = 0, cnt=0;
+ 38c:	10 92 00 01 	sts	0x0100, r1
+ 390:	10 92 01 01 	sts	0x0101, r1
+ 394:	10 92 02 01 	sts	0x0102, r1
+ 398:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 39c:	80 91 00 01 	lds	r24, 0x0100
+ 3a0:	90 91 01 01 	lds	r25, 0x0101
+ 3a4:	a0 91 02 01 	lds	r26, 0x0102
+ 3a8:	b0 91 03 01 	lds	r27, 0x0103
+		{
+			cnt1 = cnt;
+		}
+		PORTC = 0x00;
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 3ac:	89 2b       	or	r24, r25
+ 3ae:	b1 f3       	breq	.-20     	; 0x39c <send_data_ppm+0x106>
+		{
+			cnt1 = cnt;
+		}
+		cnt1 = 0, cnt=0;
+ 3b0:	10 92 00 01 	sts	0x0100, r1
+ 3b4:	10 92 01 01 	sts	0x0101, r1
+ 3b8:	10 92 02 01 	sts	0x0102, r1
+ 3bc:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 3c0:	80 91 00 01 	lds	r24, 0x0100
+ 3c4:	90 91 01 01 	lds	r25, 0x0101
+ 3c8:	a0 91 02 01 	lds	r26, 0x0102
+ 3cc:	b0 91 03 01 	lds	r27, 0x0103
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+		}
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 3d0:	89 2b       	or	r24, r25
+ 3d2:	b1 f3       	breq	.-20     	; 0x3c0 <send_data_ppm+0x12a>
+		{
+			cnt1 = cnt;
+		}
+		bit_to_check = bit_to_check >> 1;
+		cnt1 = 0, cnt=0;
+ 3d4:	10 92 00 01 	sts	0x0100, r1
+ 3d8:	10 92 01 01 	sts	0x0101, r1
+ 3dc:	10 92 02 01 	sts	0x0102, r1
+ 3e0:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 3e4:	80 91 00 01 	lds	r24, 0x0100
+ 3e8:	90 91 01 01 	lds	r25, 0x0101
+ 3ec:	a0 91 02 01 	lds	r26, 0x0102
+ 3f0:	b0 91 03 01 	lds	r27, 0x0103
+		{
+			cnt1 = cnt;
+		}
+		bit_to_check = bit_to_check >> 1;
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 3f4:	89 2b       	or	r24, r25
+ 3f6:	b1 f3       	breq	.-20     	; 0x3e4 <send_data_ppm+0x14e>
+		{
+			cnt1 = cnt;
+		}
+		cnt1 = 0, cnt=0;
+ 3f8:	10 92 00 01 	sts	0x0100, r1
+ 3fc:	10 92 01 01 	sts	0x0101, r1
+ 400:	10 92 02 01 	sts	0x0102, r1
+ 404:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 408:	80 91 00 01 	lds	r24, 0x0100
+ 40c:	90 91 01 01 	lds	r25, 0x0101
+ 410:	a0 91 02 01 	lds	r26, 0x0102
+ 414:	b0 91 03 01 	lds	r27, 0x0103
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+		}
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 418:	89 2b       	or	r24, r25
+ 41a:	b1 f3       	breq	.-20     	; 0x408 <send_data_ppm+0x172>
+		}
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+		}
+		if (!(CHECKBIT(data, bit_to_check)))
+ 41c:	25 fd       	sbrc	r18, 5
+ 41e:	02 c0       	rjmp	.+4      	; 0x424 <send_data_ppm+0x18e>
+		{
+			PORTC= 0x00;
+ 420:	15 ba       	out	0x15, r1	; 21
+ 422:	02 c0       	rjmp	.+4      	; 0x428 <send_data_ppm+0x192>
+		}
+		else
+		{	
+			PORTC = 0x07;
+ 424:	87 e0       	ldi	r24, 0x07	; 7
+ 426:	85 bb       	out	0x15, r24	; 21
+		}
+		cnt1 = 0, cnt=0;
+ 428:	10 92 00 01 	sts	0x0100, r1
+ 42c:	10 92 01 01 	sts	0x0101, r1
+ 430:	10 92 02 01 	sts	0x0102, r1
+ 434:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 438:	80 91 00 01 	lds	r24, 0x0100
+ 43c:	90 91 01 01 	lds	r25, 0x0101
+ 440:	a0 91 02 01 	lds	r26, 0x0102
+ 444:	b0 91 03 01 	lds	r27, 0x0103
+		else
+		{	
+			PORTC = 0x07;
+		}
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 448:	89 2b       	or	r24, r25
+ 44a:	b1 f3       	breq	.-20     	; 0x438 <send_data_ppm+0x1a2>
+		{
+			cnt1 = cnt;
+		}
+		PORTC = 0x00;
+ 44c:	15 ba       	out	0x15, r1	; 21
+		cnt1 = 0, cnt=0;
+ 44e:	10 92 00 01 	sts	0x0100, r1
+ 452:	10 92 01 01 	sts	0x0101, r1
+ 456:	10 92 02 01 	sts	0x0102, r1
+ 45a:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 45e:	80 91 00 01 	lds	r24, 0x0100
+ 462:	90 91 01 01 	lds	r25, 0x0101
+ 466:	a0 91 02 01 	lds	r26, 0x0102
+ 46a:	b0 91 03 01 	lds	r27, 0x0103
+		{
+			cnt1 = cnt;
+		}
+		PORTC = 0x00;
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 46e:	89 2b       	or	r24, r25
+ 470:	b1 f3       	breq	.-20     	; 0x45e <send_data_ppm+0x1c8>
+		{
+			cnt1 = cnt;
+		}
+
+		bit_to_check = bit_to_check >> 1;
+			cnt1 = 0, cnt=0;
+ 472:	10 92 00 01 	sts	0x0100, r1
+ 476:	10 92 01 01 	sts	0x0101, r1
+ 47a:	10 92 02 01 	sts	0x0102, r1
+ 47e:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 482:	80 91 00 01 	lds	r24, 0x0100
+ 486:	90 91 01 01 	lds	r25, 0x0101
+ 48a:	a0 91 02 01 	lds	r26, 0x0102
+ 48e:	b0 91 03 01 	lds	r27, 0x0103
+			cnt1 = cnt;
+		}
+
+		bit_to_check = bit_to_check >> 1;
+			cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 492:	89 2b       	or	r24, r25
+ 494:	b1 f3       	breq	.-20     	; 0x482 <send_data_ppm+0x1ec>
+		{
+			cnt1 = cnt;
+		}
+			cnt1 = 0, cnt=0;
+ 496:	10 92 00 01 	sts	0x0100, r1
+ 49a:	10 92 01 01 	sts	0x0101, r1
+ 49e:	10 92 02 01 	sts	0x0102, r1
+ 4a2:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 4a6:	80 91 00 01 	lds	r24, 0x0100
+ 4aa:	90 91 01 01 	lds	r25, 0x0101
+ 4ae:	a0 91 02 01 	lds	r26, 0x0102
+ 4b2:	b0 91 03 01 	lds	r27, 0x0103
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+		}
+			cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 4b6:	89 2b       	or	r24, r25
+ 4b8:	b1 f3       	breq	.-20     	; 0x4a6 <send_data_ppm+0x210>
+		{
+			cnt1 = cnt;
+		}
+			cnt1 = 0, cnt=0;
+ 4ba:	10 92 00 01 	sts	0x0100, r1
+ 4be:	10 92 01 01 	sts	0x0101, r1
+ 4c2:	10 92 02 01 	sts	0x0102, r1
+ 4c6:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 4ca:	80 91 00 01 	lds	r24, 0x0100
+ 4ce:	90 91 01 01 	lds	r25, 0x0101
+ 4d2:	a0 91 02 01 	lds	r26, 0x0102
+ 4d6:	b0 91 03 01 	lds	r27, 0x0103
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+		}
+			cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 4da:	89 2b       	or	r24, r25
+ 4dc:	b1 f3       	breq	.-20     	; 0x4ca <send_data_ppm+0x234>
+		{
+			cnt1 = cnt;
+		}
+		if (!(CHECKBIT(data, bit_to_check)))
+ 4de:	24 fd       	sbrc	r18, 4
+ 4e0:	02 c0       	rjmp	.+4      	; 0x4e6 <send_data_ppm+0x250>
+		{
+			PORTC= 0x00;
+ 4e2:	15 ba       	out	0x15, r1	; 21
+ 4e4:	02 c0       	rjmp	.+4      	; 0x4ea <send_data_ppm+0x254>
+		}
+		else
+		{	
+			PORTC = 0x07;
+ 4e6:	87 e0       	ldi	r24, 0x07	; 7
+ 4e8:	85 bb       	out	0x15, r24	; 21
+		}
+		cnt1 = 0, cnt=0;
+ 4ea:	10 92 00 01 	sts	0x0100, r1
+ 4ee:	10 92 01 01 	sts	0x0101, r1
+ 4f2:	10 92 02 01 	sts	0x0102, r1
+ 4f6:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ 4fa:	80 91 00 01 	lds	r24, 0x0100
+ 4fe:	90 91 01 01 	lds	r25, 0x0101
+ 502:	a0 91 02 01 	lds	r26, 0x0102
+ 506:	b0 91 03 01 	lds	r27, 0x0103
+		else
+		{	
+			PORTC = 0x07;
+		}
+		cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ 50a:	89 2b       	or	r24, r25
+ 50c:	b1 f3       	breq	.-20     	; 0x4fa <send_data_ppm+0x264>
+		{
+			cnt1 = cnt;
+		}
+		PORTC = 0x00; // Here First half ends
+ 50e:	15 ba       	out	0x15, r1	; 21
+
+
+		
+//	}
+	
+}
+ 510:	08 95       	ret
+
+00000512 <header>:
+unsigned int header()
+{
+	unsigned char bit_to_check=0x80;
+	unsigned int flag=0,cnt1=0,data[10],c=0,n=0,m=0,x=0,y=0,z=0,k=0;
+
+		PORTC = 0x07;	//000
+ 512:	87 e0       	ldi	r24, 0x07	; 7
+ 514:	85 bb       	out	0x15, r24	; 21
+ 516:	20 e0       	ldi	r18, 0x00	; 0
+ 518:	30 e0       	ldi	r19, 0x00	; 0
+		for(n=0;n<4;n++)
+		{
+		cnt1 = 0, cnt=0;
+ 51a:	10 92 00 01 	sts	0x0100, r1
+ 51e:	10 92 01 01 	sts	0x0101, r1
+ 522:	10 92 02 01 	sts	0x0102, r1
+ 526:	10 92 03 01 	sts	0x0103, r1
+			while(cnt1==0)
+			{
+				cnt1 = cnt;
+ 52a:	80 91 00 01 	lds	r24, 0x0100
+ 52e:	90 91 01 01 	lds	r25, 0x0101
+ 532:	a0 91 02 01 	lds	r26, 0x0102
+ 536:	b0 91 03 01 	lds	r27, 0x0103
+
+		PORTC = 0x07;	//000
+		for(n=0;n<4;n++)
+		{
+		cnt1 = 0, cnt=0;
+			while(cnt1==0)
+ 53a:	89 2b       	or	r24, r25
+ 53c:	b1 f3       	breq	.-20     	; 0x52a <header+0x18>
+{
+	unsigned char bit_to_check=0x80;
+	unsigned int flag=0,cnt1=0,data[10],c=0,n=0,m=0,x=0,y=0,z=0,k=0;
+
+		PORTC = 0x07;	//000
+		for(n=0;n<4;n++)
+ 53e:	2f 5f       	subi	r18, 0xFF	; 255
+ 540:	3f 4f       	sbci	r19, 0xFF	; 255
+ 542:	24 30       	cpi	r18, 0x04	; 4
+ 544:	31 05       	cpc	r19, r1
+ 546:	49 f7       	brne	.-46     	; 0x51a <header+0x8>
+			while(cnt1==0)
+			{
+				cnt1 = cnt;
+			}
+		}
+		PORTC = 0x00;
+ 548:	15 ba       	out	0x15, r1	; 21
+ 54a:	20 e0       	ldi	r18, 0x00	; 0
+ 54c:	30 e0       	ldi	r19, 0x00	; 0
+		for(n=0;n<4;n++)
+		{
+			cnt1 = 0, cnt=0;
+ 54e:	10 92 00 01 	sts	0x0100, r1
+ 552:	10 92 01 01 	sts	0x0101, r1
+ 556:	10 92 02 01 	sts	0x0102, r1
+ 55a:	10 92 03 01 	sts	0x0103, r1
+			while(cnt1==0)
+			{
+				cnt1 = cnt;
+ 55e:	80 91 00 01 	lds	r24, 0x0100
+ 562:	90 91 01 01 	lds	r25, 0x0101
+ 566:	a0 91 02 01 	lds	r26, 0x0102
+ 56a:	b0 91 03 01 	lds	r27, 0x0103
+		}
+		PORTC = 0x00;
+		for(n=0;n<4;n++)
+		{
+			cnt1 = 0, cnt=0;
+			while(cnt1==0)
+ 56e:	89 2b       	or	r24, r25
+ 570:	b1 f3       	breq	.-20     	; 0x55e <header+0x4c>
+			{
+				cnt1 = cnt;
+			}
+		}
+		PORTC = 0x00;
+		for(n=0;n<4;n++)
+ 572:	2f 5f       	subi	r18, 0xFF	; 255
+ 574:	3f 4f       	sbci	r19, 0xFF	; 255
+ 576:	24 30       	cpi	r18, 0x04	; 4
+ 578:	31 05       	cpc	r19, r1
+ 57a:	49 f7       	brne	.-46     	; 0x54e <header+0x3c>
+			while(cnt1==0)
+			{
+				cnt1 = cnt;
+			}
+		}
+}
+ 57c:	08 95       	ret
+
+0000057e <end>:
+unsigned int end()
+{
+	unsigned char bit_to_check=0x80;
+	unsigned int flag=0,cnt1=0,data[10],c=0,n=0,m=0,x=0,y=0,z=0,k=0;
+
+		PORTC = 0x00;
+ 57e:	15 ba       	out	0x15, r1	; 21
+ 580:	20 e0       	ldi	r18, 0x00	; 0
+ 582:	30 e0       	ldi	r19, 0x00	; 0
+		for(n=0;n<4;n++)
+		{
+			cnt1 = 0, cnt=0;
+ 584:	10 92 00 01 	sts	0x0100, r1
+ 588:	10 92 01 01 	sts	0x0101, r1
+ 58c:	10 92 02 01 	sts	0x0102, r1
+ 590:	10 92 03 01 	sts	0x0103, r1
+			while(cnt1==0)
+			{
+				cnt1 = cnt;
+ 594:	80 91 00 01 	lds	r24, 0x0100
+ 598:	90 91 01 01 	lds	r25, 0x0101
+ 59c:	a0 91 02 01 	lds	r26, 0x0102
+ 5a0:	b0 91 03 01 	lds	r27, 0x0103
+
+		PORTC = 0x00;
+		for(n=0;n<4;n++)
+		{
+			cnt1 = 0, cnt=0;
+			while(cnt1==0)
+ 5a4:	89 2b       	or	r24, r25
+ 5a6:	b1 f3       	breq	.-20     	; 0x594 <end+0x16>
+{
+	unsigned char bit_to_check=0x80;
+	unsigned int flag=0,cnt1=0,data[10],c=0,n=0,m=0,x=0,y=0,z=0,k=0;
+
+		PORTC = 0x00;
+		for(n=0;n<4;n++)
+ 5a8:	2f 5f       	subi	r18, 0xFF	; 255
+ 5aa:	3f 4f       	sbci	r19, 0xFF	; 255
+ 5ac:	24 30       	cpi	r18, 0x04	; 4
+ 5ae:	31 05       	cpc	r19, r1
+ 5b0:	49 f7       	brne	.-46     	; 0x584 <end+0x6>
+			while(cnt1==0)
+			{
+				cnt1 = cnt;
+			}
+		}
+} 
+ 5b2:	08 95       	ret
+
+000005b4 <ppm_mod>:
+
+unsigned int ppm_mod(char data1)
+{
+ 5b4:	df 93       	push	r29
+ 5b6:	cf 93       	push	r28
+ 5b8:	cd b7       	in	r28, 0x3d	; 61
+ 5ba:	de b7       	in	r29, 0x3e	; 62
+ 5bc:	64 97       	sbiw	r28, 0x14	; 20
+ 5be:	0f b6       	in	r0, 0x3f	; 63
+ 5c0:	f8 94       	cli
+ 5c2:	de bf       	out	0x3e, r29	; 62
+ 5c4:	0f be       	out	0x3f, r0	; 63
+ 5c6:	cd bf       	out	0x3d, r28	; 61
+ 5c8:	a8 2f       	mov	r26, r24
+ 5ca:	ae 01       	movw	r20, r28
+ 5cc:	4f 5f       	subi	r20, 0xFF	; 255
+ 5ce:	5f 4f       	sbci	r21, 0xFF	; 255
+ 5d0:	fa 01       	movw	r30, r20
+ 5d2:	90 e8       	ldi	r25, 0x80	; 128
+		{
+			data[flag] = 0;
+		}
+		else
+		{	
+			data[flag] = 1;
+ 5d4:	61 e0       	ldi	r22, 0x01	; 1
+ 5d6:	70 e0       	ldi	r23, 0x00	; 0
+unsigned int ppm_mod(char data1)
+{
+	unsigned char bit_to_check=0x80;
+	unsigned int flag=0,cnt1=0,data[10],c=0,n=0,m=0,x=0,y=0,z=0,k=0;
+	
+	while(flag<8)
+ 5d8:	9e 01       	movw	r18, r28
+ 5da:	2f 5e       	subi	r18, 0xEF	; 239
+ 5dc:	3f 4f       	sbci	r19, 0xFF	; 255
+	{
+		if (!(CHECKBIT(data1, bit_to_check)))
+ 5de:	89 2f       	mov	r24, r25
+ 5e0:	8a 23       	and	r24, r26
+ 5e2:	19 f4       	brne	.+6      	; 0x5ea <ppm_mod+0x36>
+		{
+			data[flag] = 0;
+ 5e4:	11 82       	std	Z+1, r1	; 0x01
+ 5e6:	10 82       	st	Z, r1
+ 5e8:	02 c0       	rjmp	.+4      	; 0x5ee <ppm_mod+0x3a>
+		}
+		else
+		{	
+			data[flag] = 1;
+ 5ea:	71 83       	std	Z+1, r23	; 0x01
+ 5ec:	60 83       	st	Z, r22
+ 5ee:	32 96       	adiw	r30, 0x02	; 2
+unsigned int ppm_mod(char data1)
+{
+	unsigned char bit_to_check=0x80;
+	unsigned int flag=0,cnt1=0,data[10],c=0,n=0,m=0,x=0,y=0,z=0,k=0;
+	
+	while(flag<8)
+ 5f0:	e2 17       	cp	r30, r18
+ 5f2:	f3 07       	cpc	r31, r19
+ 5f4:	11 f0       	breq	.+4      	; 0x5fa <ppm_mod+0x46>
+		else
+		{	
+			data[flag] = 1;
+		}
+		flag++;
+		bit_to_check = bit_to_check >> 1;
+ 5f6:	96 95       	lsr	r25
+ 5f8:	f2 cf       	rjmp	.-28     	; 0x5de <ppm_mod+0x2a>
+	}
+	
+	data[8]=0;
+ 5fa:	1a 8a       	std	Y+18, r1	; 0x12
+ 5fc:	19 8a       	std	Y+17, r1	; 0x11
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+ 5fe:	67 e0       	ldi	r22, 0x07	; 7
+		bit_to_check = bit_to_check >> 1;
+	}
+	
+	data[8]=0;
+	
+	for(k=0;k<3;k++)
+ 600:	fe 01       	movw	r30, r28
+ 602:	73 96       	adiw	r30, 0x13	; 19
+	{
+		if( data[m] ==0)
+ 604:	da 01       	movw	r26, r20
+ 606:	8d 91       	ld	r24, X+
+ 608:	9c 91       	ld	r25, X
+ 60a:	11 97       	sbiw	r26, 0x01	; 1
+ 60c:	12 96       	adiw	r26, 0x02	; 2
+ 60e:	2d 91       	ld	r18, X+
+ 610:	3c 91       	ld	r19, X
+ 612:	13 97       	sbiw	r26, 0x03	; 3
+ 614:	89 2b       	or	r24, r25
+ 616:	09 f0       	breq	.+2      	; 0x61a <ppm_mod+0x66>
+ 618:	08 c1       	rjmp	.+528    	; 0x82a <ppm_mod+0x276>
+ 61a:	14 96       	adiw	r26, 0x04	; 4
+ 61c:	8d 91       	ld	r24, X+
+ 61e:	9c 91       	ld	r25, X
+ 620:	15 97       	sbiw	r26, 0x05	; 5
+		{
+			if(data[m+1]==0)	
+ 622:	23 2b       	or	r18, r19
+ 624:	09 f0       	breq	.+2      	; 0x628 <ppm_mod+0x74>
+ 626:	70 c0       	rjmp	.+224    	; 0x708 <ppm_mod+0x154>
+			{
+				if( data[m+2]==0)
+ 628:	89 2b       	or	r24, r25
+ 62a:	71 f5       	brne	.+92     	; 0x688 <ppm_mod+0xd4>
+				{
+					PORTC = 0x07;	//000
+ 62c:	65 bb       	out	0x15, r22	; 21
+					cnt1 = 0, cnt=0;
+ 62e:	10 92 00 01 	sts	0x0100, r1
+ 632:	10 92 01 01 	sts	0x0101, r1
+ 636:	10 92 02 01 	sts	0x0102, r1
+ 63a:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 63e:	80 91 00 01 	lds	r24, 0x0100
+ 642:	90 91 01 01 	lds	r25, 0x0101
+ 646:	a0 91 02 01 	lds	r26, 0x0102
+ 64a:	b0 91 03 01 	lds	r27, 0x0103
+			{
+				if( data[m+2]==0)
+				{
+					PORTC = 0x07;	//000
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 64e:	89 2b       	or	r24, r25
+ 650:	b1 f3       	breq	.-20     	; 0x63e <ppm_mod+0x8a>
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+ 652:	15 ba       	out	0x15, r1	; 21
+ 654:	20 e0       	ldi	r18, 0x00	; 0
+ 656:	30 e0       	ldi	r19, 0x00	; 0
+					for(n=0;n<7;n++)
+					{
+						cnt1 = 0, cnt=0;
+ 658:	10 92 00 01 	sts	0x0100, r1
+ 65c:	10 92 01 01 	sts	0x0101, r1
+ 660:	10 92 02 01 	sts	0x0102, r1
+ 664:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 668:	80 91 00 01 	lds	r24, 0x0100
+ 66c:	90 91 01 01 	lds	r25, 0x0101
+ 670:	a0 91 02 01 	lds	r26, 0x0102
+ 674:	b0 91 03 01 	lds	r27, 0x0103
+						}
+					PORTC = 0x00;
+					for(n=0;n<7;n++)
+					{
+						cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 678:	89 2b       	or	r24, r25
+ 67a:	b1 f3       	breq	.-20     	; 0x668 <ppm_mod+0xb4>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+					for(n=0;n<7;n++)
+ 67c:	2f 5f       	subi	r18, 0xFF	; 255
+ 67e:	3f 4f       	sbci	r19, 0xFF	; 255
+ 680:	27 30       	cpi	r18, 0x07	; 7
+ 682:	31 05       	cpc	r19, r1
+ 684:	49 f7       	brne	.-46     	; 0x658 <ppm_mod+0xa4>
+ 686:	db c1       	rjmp	.+950    	; 0xa3e <ppm_mod+0x48a>
+						}
+					}
+				}
+				else	//001
+				{
+					cnt1 = 0, cnt=0;
+ 688:	10 92 00 01 	sts	0x0100, r1
+ 68c:	10 92 01 01 	sts	0x0101, r1
+ 690:	10 92 02 01 	sts	0x0102, r1
+ 694:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 698:	80 91 00 01 	lds	r24, 0x0100
+ 69c:	90 91 01 01 	lds	r25, 0x0101
+ 6a0:	a0 91 02 01 	lds	r26, 0x0102
+ 6a4:	b0 91 03 01 	lds	r27, 0x0103
+					}
+				}
+				else	//001
+				{
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 6a8:	89 2b       	or	r24, r25
+ 6aa:	b1 f3       	breq	.-20     	; 0x698 <ppm_mod+0xe4>
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x07;
+ 6ac:	65 bb       	out	0x15, r22	; 21
+						cnt1 = 0, cnt=0;
+ 6ae:	10 92 00 01 	sts	0x0100, r1
+ 6b2:	10 92 01 01 	sts	0x0101, r1
+ 6b6:	10 92 02 01 	sts	0x0102, r1
+ 6ba:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 6be:	80 91 00 01 	lds	r24, 0x0100
+ 6c2:	90 91 01 01 	lds	r25, 0x0101
+ 6c6:	a0 91 02 01 	lds	r26, 0x0102
+ 6ca:	b0 91 03 01 	lds	r27, 0x0103
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x07;
+						cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 6ce:	89 2b       	or	r24, r25
+ 6d0:	b1 f3       	breq	.-20     	; 0x6be <ppm_mod+0x10a>
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+ 6d2:	15 ba       	out	0x15, r1	; 21
+ 6d4:	20 e0       	ldi	r18, 0x00	; 0
+ 6d6:	30 e0       	ldi	r19, 0x00	; 0
+					for(n=0;n<6;n++)
+					{
+						cnt1 = 0, cnt=0;
+ 6d8:	10 92 00 01 	sts	0x0100, r1
+ 6dc:	10 92 01 01 	sts	0x0101, r1
+ 6e0:	10 92 02 01 	sts	0x0102, r1
+ 6e4:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 6e8:	80 91 00 01 	lds	r24, 0x0100
+ 6ec:	90 91 01 01 	lds	r25, 0x0101
+ 6f0:	a0 91 02 01 	lds	r26, 0x0102
+ 6f4:	b0 91 03 01 	lds	r27, 0x0103
+						}
+					PORTC = 0x00;
+					for(n=0;n<6;n++)
+					{
+						cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 6f8:	89 2b       	or	r24, r25
+ 6fa:	b1 f3       	breq	.-20     	; 0x6e8 <ppm_mod+0x134>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+					for(n=0;n<6;n++)
+ 6fc:	2f 5f       	subi	r18, 0xFF	; 255
+ 6fe:	3f 4f       	sbci	r19, 0xFF	; 255
+ 700:	26 30       	cpi	r18, 0x06	; 6
+ 702:	31 05       	cpc	r19, r1
+ 704:	49 f7       	brne	.-46     	; 0x6d8 <ppm_mod+0x124>
+ 706:	9b c1       	rjmp	.+822    	; 0xa3e <ppm_mod+0x48a>
+					}
+				}
+			}
+			else
+			{
+				if( data[m+2]==0)
+ 708:	89 2b       	or	r24, r25
+ 70a:	09 f0       	breq	.+2      	; 0x70e <ppm_mod+0x15a>
+ 70c:	47 c0       	rjmp	.+142    	; 0x79c <ppm_mod+0x1e8>
+ 70e:	20 e0       	ldi	r18, 0x00	; 0
+ 710:	30 e0       	ldi	r19, 0x00	; 0
+				{
+					//010
+					for(n=0;n<2;n++)
+					{
+					cnt1 = 0, cnt=0;
+ 712:	10 92 00 01 	sts	0x0100, r1
+ 716:	10 92 01 01 	sts	0x0101, r1
+ 71a:	10 92 02 01 	sts	0x0102, r1
+ 71e:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 722:	80 91 00 01 	lds	r24, 0x0100
+ 726:	90 91 01 01 	lds	r25, 0x0101
+ 72a:	a0 91 02 01 	lds	r26, 0x0102
+ 72e:	b0 91 03 01 	lds	r27, 0x0103
+				{
+					//010
+					for(n=0;n<2;n++)
+					{
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 732:	89 2b       	or	r24, r25
+ 734:	b1 f3       	breq	.-20     	; 0x722 <ppm_mod+0x16e>
+			else
+			{
+				if( data[m+2]==0)
+				{
+					//010
+					for(n=0;n<2;n++)
+ 736:	2f 5f       	subi	r18, 0xFF	; 255
+ 738:	3f 4f       	sbci	r19, 0xFF	; 255
+ 73a:	22 30       	cpi	r18, 0x02	; 2
+ 73c:	31 05       	cpc	r19, r1
+ 73e:	49 f7       	brne	.-46     	; 0x712 <ppm_mod+0x15e>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+ 740:	65 bb       	out	0x15, r22	; 21
+					cnt1 = 0, cnt=0;
+ 742:	10 92 00 01 	sts	0x0100, r1
+ 746:	10 92 01 01 	sts	0x0101, r1
+ 74a:	10 92 02 01 	sts	0x0102, r1
+ 74e:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 752:	80 91 00 01 	lds	r24, 0x0100
+ 756:	90 91 01 01 	lds	r25, 0x0101
+ 75a:	a0 91 02 01 	lds	r26, 0x0102
+ 75e:	b0 91 03 01 	lds	r27, 0x0103
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 762:	89 2b       	or	r24, r25
+ 764:	b1 f3       	breq	.-20     	; 0x752 <ppm_mod+0x19e>
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+ 766:	15 ba       	out	0x15, r1	; 21
+ 768:	20 e0       	ldi	r18, 0x00	; 0
+ 76a:	30 e0       	ldi	r19, 0x00	; 0
+					for(n=0;n<5;n++)
+					{
+						cnt1 = 0, cnt=0;
+ 76c:	10 92 00 01 	sts	0x0100, r1
+ 770:	10 92 01 01 	sts	0x0101, r1
+ 774:	10 92 02 01 	sts	0x0102, r1
+ 778:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 77c:	80 91 00 01 	lds	r24, 0x0100
+ 780:	90 91 01 01 	lds	r25, 0x0101
+ 784:	a0 91 02 01 	lds	r26, 0x0102
+ 788:	b0 91 03 01 	lds	r27, 0x0103
+						}
+					PORTC = 0x00;
+					for(n=0;n<5;n++)
+					{
+						cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 78c:	89 2b       	or	r24, r25
+ 78e:	b1 f3       	breq	.-20     	; 0x77c <ppm_mod+0x1c8>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+					for(n=0;n<5;n++)
+ 790:	2f 5f       	subi	r18, 0xFF	; 255
+ 792:	3f 4f       	sbci	r19, 0xFF	; 255
+ 794:	25 30       	cpi	r18, 0x05	; 5
+ 796:	31 05       	cpc	r19, r1
+ 798:	49 f7       	brne	.-46     	; 0x76c <ppm_mod+0x1b8>
+ 79a:	51 c1       	rjmp	.+674    	; 0xa3e <ppm_mod+0x48a>
+ 79c:	20 e0       	ldi	r18, 0x00	; 0
+ 79e:	30 e0       	ldi	r19, 0x00	; 0
+				{
+						//011
+					
+					for(n=0;n<3;n++)
+					{
+					cnt1 = 0, cnt=0;
+ 7a0:	10 92 00 01 	sts	0x0100, r1
+ 7a4:	10 92 01 01 	sts	0x0101, r1
+ 7a8:	10 92 02 01 	sts	0x0102, r1
+ 7ac:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 7b0:	80 91 00 01 	lds	r24, 0x0100
+ 7b4:	90 91 01 01 	lds	r25, 0x0101
+ 7b8:	a0 91 02 01 	lds	r26, 0x0102
+ 7bc:	b0 91 03 01 	lds	r27, 0x0103
+						//011
+					
+					for(n=0;n<3;n++)
+					{
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 7c0:	89 2b       	or	r24, r25
+ 7c2:	b1 f3       	breq	.-20     	; 0x7b0 <ppm_mod+0x1fc>
+				}
+				else	//001
+				{
+						//011
+					
+					for(n=0;n<3;n++)
+ 7c4:	2f 5f       	subi	r18, 0xFF	; 255
+ 7c6:	3f 4f       	sbci	r19, 0xFF	; 255
+ 7c8:	23 30       	cpi	r18, 0x03	; 3
+ 7ca:	31 05       	cpc	r19, r1
+ 7cc:	49 f7       	brne	.-46     	; 0x7a0 <ppm_mod+0x1ec>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+ 7ce:	65 bb       	out	0x15, r22	; 21
+					cnt1 = 0, cnt=0;
+ 7d0:	10 92 00 01 	sts	0x0100, r1
+ 7d4:	10 92 01 01 	sts	0x0101, r1
+ 7d8:	10 92 02 01 	sts	0x0102, r1
+ 7dc:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 7e0:	80 91 00 01 	lds	r24, 0x0100
+ 7e4:	90 91 01 01 	lds	r25, 0x0101
+ 7e8:	a0 91 02 01 	lds	r26, 0x0102
+ 7ec:	b0 91 03 01 	lds	r27, 0x0103
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 7f0:	89 2b       	or	r24, r25
+ 7f2:	b1 f3       	breq	.-20     	; 0x7e0 <ppm_mod+0x22c>
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+ 7f4:	15 ba       	out	0x15, r1	; 21
+ 7f6:	20 e0       	ldi	r18, 0x00	; 0
+ 7f8:	30 e0       	ldi	r19, 0x00	; 0
+					for(n=0;n<4;n++)
+					{
+						cnt1 = 0, cnt=0;
+ 7fa:	10 92 00 01 	sts	0x0100, r1
+ 7fe:	10 92 01 01 	sts	0x0101, r1
+ 802:	10 92 02 01 	sts	0x0102, r1
+ 806:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 80a:	80 91 00 01 	lds	r24, 0x0100
+ 80e:	90 91 01 01 	lds	r25, 0x0101
+ 812:	a0 91 02 01 	lds	r26, 0x0102
+ 816:	b0 91 03 01 	lds	r27, 0x0103
+						}
+					PORTC = 0x00;
+					for(n=0;n<4;n++)
+					{
+						cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 81a:	89 2b       	or	r24, r25
+ 81c:	b1 f3       	breq	.-20     	; 0x80a <ppm_mod+0x256>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+					for(n=0;n<4;n++)
+ 81e:	2f 5f       	subi	r18, 0xFF	; 255
+ 820:	3f 4f       	sbci	r19, 0xFF	; 255
+ 822:	24 30       	cpi	r18, 0x04	; 4
+ 824:	31 05       	cpc	r19, r1
+ 826:	49 f7       	brne	.-46     	; 0x7fa <ppm_mod+0x246>
+ 828:	0a c1       	rjmp	.+532    	; 0xa3e <ppm_mod+0x48a>
+ 82a:	da 01       	movw	r26, r20
+ 82c:	14 96       	adiw	r26, 0x04	; 4
+ 82e:	8d 91       	ld	r24, X+
+ 830:	9c 91       	ld	r25, X
+ 832:	15 97       	sbiw	r26, 0x05	; 5
+				}
+			}
+		}
+		else
+		{
+			if(data[m+1]==0)	
+ 834:	23 2b       	or	r18, r19
+ 836:	09 f0       	breq	.+2      	; 0x83a <ppm_mod+0x286>
+ 838:	92 c0       	rjmp	.+292    	; 0x95e <ppm_mod+0x3aa>
+			{
+				if( data[m+2]==0)
+ 83a:	89 2b       	or	r24, r25
+ 83c:	09 f0       	breq	.+2      	; 0x840 <ppm_mod+0x28c>
+ 83e:	47 c0       	rjmp	.+142    	; 0x8ce <ppm_mod+0x31a>
+ 840:	20 e0       	ldi	r18, 0x00	; 0
+ 842:	30 e0       	ldi	r19, 0x00	; 0
+				{
+					//100
+					for(n=0;n<4;n++)
+					{
+					cnt1 = 0, cnt=0;
+ 844:	10 92 00 01 	sts	0x0100, r1
+ 848:	10 92 01 01 	sts	0x0101, r1
+ 84c:	10 92 02 01 	sts	0x0102, r1
+ 850:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 854:	80 91 00 01 	lds	r24, 0x0100
+ 858:	90 91 01 01 	lds	r25, 0x0101
+ 85c:	a0 91 02 01 	lds	r26, 0x0102
+ 860:	b0 91 03 01 	lds	r27, 0x0103
+				{
+					//100
+					for(n=0;n<4;n++)
+					{
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 864:	89 2b       	or	r24, r25
+ 866:	b1 f3       	breq	.-20     	; 0x854 <ppm_mod+0x2a0>
+			if(data[m+1]==0)	
+			{
+				if( data[m+2]==0)
+				{
+					//100
+					for(n=0;n<4;n++)
+ 868:	2f 5f       	subi	r18, 0xFF	; 255
+ 86a:	3f 4f       	sbci	r19, 0xFF	; 255
+ 86c:	24 30       	cpi	r18, 0x04	; 4
+ 86e:	31 05       	cpc	r19, r1
+ 870:	49 f7       	brne	.-46     	; 0x844 <ppm_mod+0x290>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+ 872:	65 bb       	out	0x15, r22	; 21
+					cnt1 = 0, cnt=0;
+ 874:	10 92 00 01 	sts	0x0100, r1
+ 878:	10 92 01 01 	sts	0x0101, r1
+ 87c:	10 92 02 01 	sts	0x0102, r1
+ 880:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 884:	80 91 00 01 	lds	r24, 0x0100
+ 888:	90 91 01 01 	lds	r25, 0x0101
+ 88c:	a0 91 02 01 	lds	r26, 0x0102
+ 890:	b0 91 03 01 	lds	r27, 0x0103
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 894:	89 2b       	or	r24, r25
+ 896:	b1 f3       	breq	.-20     	; 0x884 <ppm_mod+0x2d0>
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+ 898:	15 ba       	out	0x15, r1	; 21
+ 89a:	20 e0       	ldi	r18, 0x00	; 0
+ 89c:	30 e0       	ldi	r19, 0x00	; 0
+					for(n=0;n<3;n++)
+					{
+						cnt1 = 0, cnt=0;
+ 89e:	10 92 00 01 	sts	0x0100, r1
+ 8a2:	10 92 01 01 	sts	0x0101, r1
+ 8a6:	10 92 02 01 	sts	0x0102, r1
+ 8aa:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 8ae:	80 91 00 01 	lds	r24, 0x0100
+ 8b2:	90 91 01 01 	lds	r25, 0x0101
+ 8b6:	a0 91 02 01 	lds	r26, 0x0102
+ 8ba:	b0 91 03 01 	lds	r27, 0x0103
+						}
+					PORTC = 0x00;
+					for(n=0;n<3;n++)
+					{
+						cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 8be:	89 2b       	or	r24, r25
+ 8c0:	b1 f3       	breq	.-20     	; 0x8ae <ppm_mod+0x2fa>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+					for(n=0;n<3;n++)
+ 8c2:	2f 5f       	subi	r18, 0xFF	; 255
+ 8c4:	3f 4f       	sbci	r19, 0xFF	; 255
+ 8c6:	23 30       	cpi	r18, 0x03	; 3
+ 8c8:	31 05       	cpc	r19, r1
+ 8ca:	49 f7       	brne	.-46     	; 0x89e <ppm_mod+0x2ea>
+ 8cc:	b8 c0       	rjmp	.+368    	; 0xa3e <ppm_mod+0x48a>
+ 8ce:	20 e0       	ldi	r18, 0x00	; 0
+ 8d0:	30 e0       	ldi	r19, 0x00	; 0
+				else
+				{
+						//101
+					for(n=0;n<5;n++)
+					{
+					cnt1 = 0, cnt=0;
+ 8d2:	10 92 00 01 	sts	0x0100, r1
+ 8d6:	10 92 01 01 	sts	0x0101, r1
+ 8da:	10 92 02 01 	sts	0x0102, r1
+ 8de:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 8e2:	80 91 00 01 	lds	r24, 0x0100
+ 8e6:	90 91 01 01 	lds	r25, 0x0101
+ 8ea:	a0 91 02 01 	lds	r26, 0x0102
+ 8ee:	b0 91 03 01 	lds	r27, 0x0103
+				{
+						//101
+					for(n=0;n<5;n++)
+					{
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 8f2:	89 2b       	or	r24, r25
+ 8f4:	b1 f3       	breq	.-20     	; 0x8e2 <ppm_mod+0x32e>
+					}
+				}
+				else
+				{
+						//101
+					for(n=0;n<5;n++)
+ 8f6:	2f 5f       	subi	r18, 0xFF	; 255
+ 8f8:	3f 4f       	sbci	r19, 0xFF	; 255
+ 8fa:	25 30       	cpi	r18, 0x05	; 5
+ 8fc:	31 05       	cpc	r19, r1
+ 8fe:	49 f7       	brne	.-46     	; 0x8d2 <ppm_mod+0x31e>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+ 900:	65 bb       	out	0x15, r22	; 21
+					cnt1 = 0, cnt=0;
+ 902:	10 92 00 01 	sts	0x0100, r1
+ 906:	10 92 01 01 	sts	0x0101, r1
+ 90a:	10 92 02 01 	sts	0x0102, r1
+ 90e:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 912:	80 91 00 01 	lds	r24, 0x0100
+ 916:	90 91 01 01 	lds	r25, 0x0101
+ 91a:	a0 91 02 01 	lds	r26, 0x0102
+ 91e:	b0 91 03 01 	lds	r27, 0x0103
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 922:	89 2b       	or	r24, r25
+ 924:	b1 f3       	breq	.-20     	; 0x912 <ppm_mod+0x35e>
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+ 926:	15 ba       	out	0x15, r1	; 21
+ 928:	20 e0       	ldi	r18, 0x00	; 0
+ 92a:	30 e0       	ldi	r19, 0x00	; 0
+					for(n=0;n<2;n++)
+					{
+						cnt1 = 0, cnt=0;
+ 92c:	10 92 00 01 	sts	0x0100, r1
+ 930:	10 92 01 01 	sts	0x0101, r1
+ 934:	10 92 02 01 	sts	0x0102, r1
+ 938:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 93c:	80 91 00 01 	lds	r24, 0x0100
+ 940:	90 91 01 01 	lds	r25, 0x0101
+ 944:	a0 91 02 01 	lds	r26, 0x0102
+ 948:	b0 91 03 01 	lds	r27, 0x0103
+						}
+					PORTC = 0x00;
+					for(n=0;n<2;n++)
+					{
+						cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 94c:	89 2b       	or	r24, r25
+ 94e:	b1 f3       	breq	.-20     	; 0x93c <ppm_mod+0x388>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+					for(n=0;n<2;n++)
+ 950:	2f 5f       	subi	r18, 0xFF	; 255
+ 952:	3f 4f       	sbci	r19, 0xFF	; 255
+ 954:	22 30       	cpi	r18, 0x02	; 2
+ 956:	31 05       	cpc	r19, r1
+ 958:	09 f4       	brne	.+2      	; 0x95c <ppm_mod+0x3a8>
+ 95a:	71 c0       	rjmp	.+226    	; 0xa3e <ppm_mod+0x48a>
+ 95c:	e7 cf       	rjmp	.-50     	; 0x92c <ppm_mod+0x378>
+					}
+				}
+			}
+			else
+			{
+				if( data[m+2]==0)
+ 95e:	89 2b       	or	r24, r25
+ 960:	09 f0       	breq	.+2      	; 0x964 <ppm_mod+0x3b0>
+ 962:	40 c0       	rjmp	.+128    	; 0x9e4 <ppm_mod+0x430>
+ 964:	20 e0       	ldi	r18, 0x00	; 0
+ 966:	30 e0       	ldi	r19, 0x00	; 0
+				{
+						//110
+					for(n=0;n<6;n++)
+					{
+					cnt1 = 0, cnt=0;
+ 968:	10 92 00 01 	sts	0x0100, r1
+ 96c:	10 92 01 01 	sts	0x0101, r1
+ 970:	10 92 02 01 	sts	0x0102, r1
+ 974:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 978:	80 91 00 01 	lds	r24, 0x0100
+ 97c:	90 91 01 01 	lds	r25, 0x0101
+ 980:	a0 91 02 01 	lds	r26, 0x0102
+ 984:	b0 91 03 01 	lds	r27, 0x0103
+				{
+						//110
+					for(n=0;n<6;n++)
+					{
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 988:	89 2b       	or	r24, r25
+ 98a:	b1 f3       	breq	.-20     	; 0x978 <ppm_mod+0x3c4>
+			else
+			{
+				if( data[m+2]==0)
+				{
+						//110
+					for(n=0;n<6;n++)
+ 98c:	2f 5f       	subi	r18, 0xFF	; 255
+ 98e:	3f 4f       	sbci	r19, 0xFF	; 255
+ 990:	26 30       	cpi	r18, 0x06	; 6
+ 992:	31 05       	cpc	r19, r1
+ 994:	49 f7       	brne	.-46     	; 0x968 <ppm_mod+0x3b4>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+ 996:	65 bb       	out	0x15, r22	; 21
+					cnt1 = 0, cnt=0;
+ 998:	10 92 00 01 	sts	0x0100, r1
+ 99c:	10 92 01 01 	sts	0x0101, r1
+ 9a0:	10 92 02 01 	sts	0x0102, r1
+ 9a4:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 9a8:	80 91 00 01 	lds	r24, 0x0100
+ 9ac:	90 91 01 01 	lds	r25, 0x0101
+ 9b0:	a0 91 02 01 	lds	r26, 0x0102
+ 9b4:	b0 91 03 01 	lds	r27, 0x0103
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 9b8:	89 2b       	or	r24, r25
+ 9ba:	b1 f3       	breq	.-20     	; 0x9a8 <ppm_mod+0x3f4>
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+ 9bc:	15 ba       	out	0x15, r1	; 21
+					for(n=0;n<1;n++)
+					{
+						cnt1 = 0, cnt=0;
+ 9be:	10 92 00 01 	sts	0x0100, r1
+ 9c2:	10 92 01 01 	sts	0x0101, r1
+ 9c6:	10 92 02 01 	sts	0x0102, r1
+ 9ca:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 9ce:	80 91 00 01 	lds	r24, 0x0100
+ 9d2:	90 91 01 01 	lds	r25, 0x0101
+ 9d6:	a0 91 02 01 	lds	r26, 0x0102
+ 9da:	b0 91 03 01 	lds	r27, 0x0103
+						}
+					PORTC = 0x00;
+					for(n=0;n<1;n++)
+					{
+						cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ 9de:	89 2b       	or	r24, r25
+ 9e0:	b1 f3       	breq	.-20     	; 0x9ce <ppm_mod+0x41a>
+ 9e2:	2d c0       	rjmp	.+90     	; 0xa3e <ppm_mod+0x48a>
+ 9e4:	20 e0       	ldi	r18, 0x00	; 0
+ 9e6:	30 e0       	ldi	r19, 0x00	; 0
+				else
+				{
+						//111
+					for(n=0;n<7;n++)
+					{
+					cnt1 = 0, cnt=0;
+ 9e8:	10 92 00 01 	sts	0x0100, r1
+ 9ec:	10 92 01 01 	sts	0x0101, r1
+ 9f0:	10 92 02 01 	sts	0x0102, r1
+ 9f4:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ 9f8:	80 91 00 01 	lds	r24, 0x0100
+ 9fc:	90 91 01 01 	lds	r25, 0x0101
+ a00:	a0 91 02 01 	lds	r26, 0x0102
+ a04:	b0 91 03 01 	lds	r27, 0x0103
+				{
+						//111
+					for(n=0;n<7;n++)
+					{
+					cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ a08:	89 2b       	or	r24, r25
+ a0a:	b1 f3       	breq	.-20     	; 0x9f8 <ppm_mod+0x444>
+					}
+				}
+				else
+				{
+						//111
+					for(n=0;n<7;n++)
+ a0c:	2f 5f       	subi	r18, 0xFF	; 255
+ a0e:	3f 4f       	sbci	r19, 0xFF	; 255
+ a10:	27 30       	cpi	r18, 0x07	; 7
+ a12:	31 05       	cpc	r19, r1
+ a14:	49 f7       	brne	.-46     	; 0x9e8 <ppm_mod+0x434>
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+ a16:	65 bb       	out	0x15, r22	; 21
+						cnt1 = 0, cnt=0;
+ a18:	10 92 00 01 	sts	0x0100, r1
+ a1c:	10 92 01 01 	sts	0x0101, r1
+ a20:	10 92 02 01 	sts	0x0102, r1
+ a24:	10 92 03 01 	sts	0x0103, r1
+						while(cnt1==0)
+						{
+							cnt1 = cnt;
+ a28:	80 91 00 01 	lds	r24, 0x0100
+ a2c:	90 91 01 01 	lds	r25, 0x0101
+ a30:	a0 91 02 01 	lds	r26, 0x0102
+ a34:	b0 91 03 01 	lds	r27, 0x0103
+							cnt1 = cnt;
+						}
+					}
+					PORTC = 0x07;
+						cnt1 = 0, cnt=0;
+						while(cnt1==0)
+ a38:	89 2b       	or	r24, r25
+ a3a:	b1 f3       	breq	.-20     	; 0xa28 <ppm_mod+0x474>
+						{
+							cnt1 = cnt;
+						}
+					PORTC = 0x00;
+ a3c:	15 ba       	out	0x15, r1	; 21
+ a3e:	4a 5f       	subi	r20, 0xFA	; 250
+ a40:	5f 4f       	sbci	r21, 0xFF	; 255
+		bit_to_check = bit_to_check >> 1;
+	}
+	
+	data[8]=0;
+	
+	for(k=0;k<3;k++)
+ a42:	4e 17       	cp	r20, r30
+ a44:	5f 07       	cpc	r21, r31
+ a46:	09 f0       	breq	.+2      	; 0xa4a <ppm_mod+0x496>
+ a48:	dd cd       	rjmp	.-1094   	; 0x604 <ppm_mod+0x50>
+
+
+	
+
+
+}
+ a4a:	64 96       	adiw	r28, 0x14	; 20
+ a4c:	0f b6       	in	r0, 0x3f	; 63
+ a4e:	f8 94       	cli
+ a50:	de bf       	out	0x3e, r29	; 62
+ a52:	0f be       	out	0x3f, r0	; 63
+ a54:	cd bf       	out	0x3d, r28	; 61
+ a56:	cf 91       	pop	r28
+ a58:	df 91       	pop	r29
+ a5a:	08 95       	ret
+
+00000a5c <send_code_portD>:
+
+
+// Sending data using port D
+
+unsigned int send_code_portD(char data)
+{
+ a5c:	58 2f       	mov	r21, r24
+ a5e:	40 e8       	ldi	r20, 0x80	; 128
+ a60:	20 e0       	ldi	r18, 0x00	; 0
+ a62:	30 e0       	ldi	r19, 0x00	; 0
+		{
+			PORTD= 0x00;
+		}
+		else
+		{	
+			PORTD = 0x07;
+ a64:	67 e0       	ldi	r22, 0x07	; 7
+	unsigned char bit_to_check=0x80;
+	unsigned int flag=0,cnt1=0;
+	while(flag<8)
+	{
+			
+		if (!(CHECKBIT(data, bit_to_check)))
+ a66:	84 2f       	mov	r24, r20
+ a68:	85 23       	and	r24, r21
+ a6a:	11 f4       	brne	.+4      	; 0xa70 <send_code_portD+0x14>
+		{
+			PORTD= 0x00;
+ a6c:	12 ba       	out	0x12, r1	; 18
+ a6e:	01 c0       	rjmp	.+2      	; 0xa72 <send_code_portD+0x16>
+		}
+		else
+		{	
+			PORTD = 0x07;
+ a70:	62 bb       	out	0x12, r22	; 18
+		}
+		flag++;
+ a72:	2f 5f       	subi	r18, 0xFF	; 255
+ a74:	3f 4f       	sbci	r19, 0xFF	; 255
+		bit_to_check = bit_to_check >> 1;
+//		_delay_us(50);
+	cnt1 = 0, cnt=0;
+ a76:	10 92 00 01 	sts	0x0100, r1
+ a7a:	10 92 01 01 	sts	0x0101, r1
+ a7e:	10 92 02 01 	sts	0x0102, r1
+ a82:	10 92 03 01 	sts	0x0103, r1
+		while(cnt1==0)
+		{
+			cnt1 = cnt;
+ a86:	80 91 00 01 	lds	r24, 0x0100
+ a8a:	90 91 01 01 	lds	r25, 0x0101
+ a8e:	a0 91 02 01 	lds	r26, 0x0102
+ a92:	b0 91 03 01 	lds	r27, 0x0103
+		}
+		flag++;
+		bit_to_check = bit_to_check >> 1;
+//		_delay_us(50);
+	cnt1 = 0, cnt=0;
+		while(cnt1==0)
+ a96:	89 2b       	or	r24, r25
+ a98:	b1 f3       	breq	.-20     	; 0xa86 <send_code_portD+0x2a>
+
+unsigned int send_code_portD(char data)
+{
+	unsigned char bit_to_check=0x80;
+	unsigned int flag=0,cnt1=0;
+	while(flag<8)
+ a9a:	28 30       	cpi	r18, 0x08	; 8
+ a9c:	31 05       	cpc	r19, r1
+ a9e:	11 f0       	breq	.+4      	; 0xaa4 <send_code_portD+0x48>
+		else
+		{	
+			PORTD = 0x07;
+		}
+		flag++;
+		bit_to_check = bit_to_check >> 1;
+ aa0:	46 95       	lsr	r20
+ aa2:	e1 cf       	rjmp	.-62     	; 0xa66 <send_code_portD+0xa>
+		{
+			cnt1 = cnt;
+		}
+	}
+	return 1;
+}
+ aa4:	81 e0       	ldi	r24, 0x01	; 1
+ aa6:	90 e0       	ldi	r25, 0x00	; 0
+ aa8:	08 95       	ret
+
+00000aaa <main>:
+
+
+
+
+int main(void)
+{   
+ aaa:	1f 93       	push	r17
+	unsigned int ctr;
+	unsigned char Rd[32],Rd1[32];
+	serial_init();
+ aac:	0e 94 67 00 	call	0xce	; 0xce <serial_init>
+	Timer1_init();
+ ab0:	0e 94 79 00 	call	0xf2	; 0xf2 <Timer1_init>
+	DDRA=0xFF;
+ ab4:	8f ef       	ldi	r24, 0xFF	; 255
+ ab6:	8a bb       	out	0x1a, r24	; 26
+	DDRD=0xFF;
+ ab8:	81 bb       	out	0x11, r24	; 17
+	DDRC = 0xFF;
+ aba:	84 bb       	out	0x14, r24	; 20
+	TIMSK |= 0x04;
+ abc:	87 b7       	in	r24, 0x37	; 55
+ abe:	84 60       	ori	r24, 0x04	; 4
+ ac0:	87 bf       	out	0x37, r24	; 55
+	SREG |= 0x80;
+ ac2:	8f b7       	in	r24, 0x3f	; 63
+ ac4:	80 68       	ori	r24, 0x80	; 128
+ ac6:	8f bf       	out	0x3f, r24	; 63
+		send_code_portC(0x23);
+		send_code_portC(0x24);
+		send_code_portC(0x00);*/
+	//	_delay_ms(100);
+
+		PORTA ^= 0x01;
+ ac8:	11 e0       	ldi	r17, 0x01	; 1
+	//	transmit1(Rd[8]);
+	//	transmit1(Rd[9]);
+	//	transmit1(0x00);
+	//	send_code_portC(0xFF);
+	//	send_code_portC(0x80);
+		header();
+ aca:	0e 94 89 02 	call	0x512	; 0x512 <header>
+		ppm_mod(0x29);
+ ace:	89 e2       	ldi	r24, 0x29	; 41
+ ad0:	0e 94 da 02 	call	0x5b4	; 0x5b4 <ppm_mod>
+		ppm_mod(0x45);
+ ad4:	85 e4       	ldi	r24, 0x45	; 69
+ ad6:	0e 94 da 02 	call	0x5b4	; 0x5b4 <ppm_mod>
+		end();
+ ada:	0e 94 bf 02 	call	0x57e	; 0x57e <end>
+		send_code_portC(0x23);
+		send_code_portC(0x24);
+		send_code_portC(0x00);*/
+	//	_delay_ms(100);
+
+		PORTA ^= 0x01;
+ ade:	8b b3       	in	r24, 0x1b	; 27
+ ae0:	81 27       	eor	r24, r17
+ ae2:	8b bb       	out	0x1b, r24	; 27
+ ae4:	f2 cf       	rjmp	.-28     	; 0xaca <main+0x20>
+
+00000ae6 <_exit>:
+ ae6:	f8 94       	cli
+
+00000ae8 <__stop_program>:
+ ae8:	ff cf       	rjmp	.-2      	; 0xae8 <__stop_program>
