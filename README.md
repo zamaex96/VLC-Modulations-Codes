@@ -41,4 +41,53 @@ The program controls an AVR microcontroller to generate specific patterns of MPP
 - Consider optimizing delay mechanisms to reduce busy-wait time.
 - Ensure synchronization and error handling in serial communication.
 
+### AVR Microcontroller Multi-level Program Summary
+
+#### Purpose:
+The program controls an AVR microcontroller to perform the following tasks:
+- Initialize serial communication for UART0 and UART1.
+- Initialize Timer1 for precise timing operations.
+- Control output on Port C based on bit patterns.
+- Receive sensor data over UART0.
+
+#### Components:
+1. **Serial Communication Initialization (`serial_init`):**
+   - Sets baud rates for UART0 and UART1.
+   - Configures UART settings for 8-bit data, no parity, 1 stop bit.
+
+2. **Timer Initialization (`Timer1_init`):**
+   - Configures Timer1 in Phase Correct PWM mode with a prescaler of 8.
+   - Sets Timer1 to overflow at a specific cycle (`cycles`).
+
+3. **ISR (`TIMER1_OVF_vect`):**
+   - Interrupt Service Routine increments a volatile counter (`cnt`) on Timer1 overflow.
+
+4. **Data Transmission Functions:**
+   - `transmit0` and `transmit1`: Transmit data over UART0 and UART1 respectively.
+   - `Rxdata`: Receive data over UART0.
+
+5. **Port Control Function (`multilevel`):**
+   - Controls Port C output based on the bit pattern of input data.
+   - Uses busy-wait loops (`cnt`) for timing delays.
+
+6. **Sensor Data Retrieval (`getSensorData`):**
+   - Transmits a sequence of commands over UART0 to retrieve sensor data.
+   - Stores received data in the array `data`.
+
+7. **Main Function (`main`):**
+   - Initializes peripherals and interrupts.
+   - Sets Port A, C, and D as output ports.
+   - Loops indefinitely, controlling Port C output based on predefined bit patterns and toggling an output pin on Port A.
+
+#### Key Points:
+- Utilizes UART for serial communication and Timer1 for timing applications.
+- Implements busy-wait delay loops (`cnt`) for timing control.
+- Configures multiple ports (A, C, D) for output operations.
+- Integrates sensor data retrieval via UART communication.
+
+#### Recommendations:
+- Consider optimizing timing mechanisms to reduce reliance on busy-wait loops.
+- Implement error handling and synchronization mechanisms for UART communication.
+- Ensure consistent and efficient use of resources across all components.
+
 
