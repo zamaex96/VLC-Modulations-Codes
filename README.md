@@ -135,5 +135,58 @@ The program controls an AVR microcontroller to perform the following tasks:
 - Ensure synchronization and error handling for UART communication.
 - Validate and adjust timing settings (`cycles`) for specific application requirements.
 
+### PWM Program Summary
+
+#### Purpose:
+The program controls an AVR microcontroller to perform the following tasks:
+- Initialize serial communication for UART0 and UART1.
+- Initialize Timer1 for precise timing operations.
+- Control output on Ports A, B, D, C, and F based on bit patterns.
+- Toggle an output pin on Port A.
+- Read sensor data over UART0.
+
+#### Components:
+1. **Serial Communication Initialization (`serial_init`):**
+   - Sets baud rates for UART0 and UART1.
+   - Configures UART settings for 8-bit data, no parity, 1 stop bit.
+
+2. **Timer Initialization (`Timer1_init`):**
+   - Configures Timer1 in Phase Correct PWM mode with a prescaler of 8.
+   - Sets Timer1 to overflow at a specific cycle (`cycles`).
+
+3. **ISR (`TIMER1_OVF_vect`):**
+   - Interrupt Service Routine increments a volatile counter (`cnt`) on Timer1 overflow.
+
+4. **Data Transmission Functions:**
+   - `transmit0` and `transmit1`: Transmit data over UART0 and UART1 respectively.
+   - `Rxdata`: Receive data over UART0.
+
+5. **PWM Control Functions (`pwm_test` and `pwm_test_B`):**
+   - Generates PWM signals on Ports A and B based on the bit pattern of input data.
+   - Delays using a busy-wait loop (`cnt`) for timing control.
+
+6. **End Space Function (`end_space`):**
+   - Generates an end space signal on Port A with a predefined sequence of pulses.
+
+7. **Sensor Data Acquisition (`getSensorData`):**
+   - Sends commands over UART0 to request sensor data and receives 32 bytes of data into an array (`data`).
+
+8. **Main Function (`main`):**
+   - Initializes peripherals and interrupts.
+   - Sets Ports A, B, C, D, and F as output ports.
+   - Loops indefinitely, generating PWM signals on Port A, reading sensor data, and toggling an output pin on Port A.
+
+#### Key Points:
+- Uses UART for serial communication and Timer1 for precise timing.
+- Implements busy-wait delay loops (`cnt`) for timing control in PWM functions.
+- Handles multiple output ports for PWM signal generation and end space signal.
+- Demonstrates the use of ISR for Timer1 overflow and UART data reception.
+
+#### Recommendations:
+- Optimize timing mechanisms to reduce reliance on busy-wait loops.
+- Ensure synchronization and error handling for UART communication, especially in `getSensorData`.
+- Validate and adjust timing settings (`cycles`) and PWM patterns (`pwm_test` and `pwm_test_B`) based on specific application requirements.
+
+
 
 
