@@ -90,4 +90,50 @@ The program controls an AVR microcontroller to perform the following tasks:
 - Implement error handling and synchronization mechanisms for UART communication.
 - Ensure consistent and efficient use of resources across all components.
 
+### PPM
+
+#### Purpose:
+The program controls an AVR microcontroller to perform the following tasks:
+- Initialize serial communication for UART0 and UART1.
+- Initialize Timer1 for precise timing operations.
+- Control output on Ports C, D, and F based on bit patterns.
+- Toggle an output pin on Port A.
+
+#### Components:
+1. **Serial Communication Initialization (`serial_init`):**
+   - Sets baud rates for UART0 and UART1.
+   - Configures UART settings for 8-bit data, no parity, 1 stop bit.
+
+2. **Timer Initialization (`Timer1_init`):**
+   - Configures Timer1 in Phase Correct PWM mode with a prescaler of 8.
+   - Sets Timer1 to overflow at a specific cycle (`cycles`).
+
+3. **ISR (`TIMER1_OVF_vect`):**
+   - Interrupt Service Routine increments a volatile counter (`cnt`) on Timer1 overflow.
+
+4. **Data Transmission Functions:**
+   - `transmit0` and `transmit1`: Transmit data over UART0 and UART1 respectively.
+   - `Rxdata` and `Rxdata1`: Receive data over UART0 and UART1 respectively.
+
+5. **Port Output Functions (`send_ppm_new_C` and `send_ppm_new_F`):**
+   - Controls output on Ports C and F based on the bit pattern of input data.
+   - Delays using a busy-wait loop (`cnt`) for timing control.
+
+6. **Main Function (`main`):**
+   - Initializes peripherals and interrupts.
+   - Sets Ports A, C, D, and F as output ports.
+   - Loops indefinitely, transmitting predefined bit patterns through Ports C and optionally F, toggling an output pin on Port A.
+
+#### Key Points:
+- Uses UART for serial communication and Timer1 for precise timing.
+- Implements busy-wait delay loops (`cnt`) for timing control.
+- Configures multiple ports (A, C, D, F) for output operations.
+- Demonstrates the use of ISR for Timer1 overflow.
+
+#### Recommendations:
+- Consider optimizing timing mechanisms to reduce reliance on busy-wait loops.
+- Ensure synchronization and error handling for UART communication.
+- Validate and adjust timing settings (`cycles`) for specific application requirements.
+
+
 
