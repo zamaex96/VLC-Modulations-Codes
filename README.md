@@ -187,6 +187,13 @@ The program controls an AVR microcontroller to perform the following tasks:
 - Ensure synchronization and error handling for UART communication, especially in `getSensorData`.
 - Validate and adjust timing settings (`cycles`) and PWM patterns (`pwm_test` and `pwm_test_B`) based on specific application requirements.
 
+  <div align="center">
+  <a href="https://maazsalman.org/">
+    <img width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="gh" />
+  </a>
+  <p> Explore More! 🚀</p>
+</div>
+
 
 
 
